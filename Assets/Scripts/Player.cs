@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
+    [SerializeField]
+    private GameObject fishing;
+
+    public bool isFishing;
     public float moveSpeed;
-    private bool isSwimming;
     private float prevMoveSpeed;
 
     Animator anim;
     SpriteRenderer spriteRenderer;
 
-    public class ItemList
-    {
+    private GameObject destroyedObject;
+    
 
+    private void Awake()
+    {
+        Instance = this;
     }
+
     void Start()
     {
+        isFishing = false;
         prevMoveSpeed = moveSpeed;
 
         anim = GetComponent<Animator>();
@@ -24,17 +34,8 @@ public class Player : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isSwimming)
-        {
-            moveSpeed = 6;
-        }
-        else
-        {
-            moveSpeed = prevMoveSpeed;
-        }
 
         Move();
     }
@@ -83,18 +84,26 @@ public class Player : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Sea"))
-        {
-            Debug.Log("수영중");
-            isSwimming = true;
-        }
-
         if (collision.gameObject.CompareTag("Item"))
         {
+            destroyedObject = collision.gameObject;
+            isFishing = true;
+            moveSpeed = 0;
             Debug.Log("아이템 획득");
-            Destroy(collision.gameObject);
+            fishing.SetActive(true);
+            
+            //Destroy(collision.gameObject);
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Sea")&& !isFishing)
+        {
+            Debug.Log("수영중");
+            moveSpeed = 6;
         }
     }
 
@@ -103,10 +112,17 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Sea"))
         {
             Debug.Log("수영끝");
-            isSwimming = false;
+            moveSpeed = prevMoveSpeed;
+        }
+
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 
-    
-
+    public void RayDestroy()
+    {
+        Destroy(destroyedObject);
+    }
 }
