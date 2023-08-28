@@ -51,7 +51,6 @@ public class Player : MonoBehaviour
 
         if (x != 0)
         {
-            Debug.Log("방향키 누름");
             anim.SetBool("lookFront", false);
             anim.SetBool("lookBack", false);
             anim.SetBool("isWalking", true);
@@ -102,7 +101,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Sea")&& !isFishing)
         {
-            Debug.Log("수영중");
+            //Debug.Log("수영중");
             moveSpeed = 6;
         }
     }
@@ -111,7 +110,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Sea"))
         {
-            Debug.Log("수영끝");
+            //Debug.Log("수영끝");
             moveSpeed = prevMoveSpeed;
         }
 
