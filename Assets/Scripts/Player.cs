@@ -85,11 +85,11 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        moveSpeed = 0;
         if (collision.gameObject.CompareTag("Item"))
         {
             destroyedObject = collision.gameObject;
             isFishing = true;
-            moveSpeed = 0;
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
             fishing.SetActive(true);
             
