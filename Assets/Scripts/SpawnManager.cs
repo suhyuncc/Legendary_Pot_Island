@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         makeItem();
-        makefruit();
+        //makefruit();
     }
 
     void Update()
@@ -40,5 +40,22 @@ public class SpawnManager : MonoBehaviour
             int yPos = Random.Range(20, 40);
             Instantiate(fruit, new Vector3(xPos, yPos, 0), fruit.transform.rotation);
         }
+    }
+
+    public void Dropfruit(float x, float y)
+    {
+        Debug.Log(x+" " +y);
+        Instantiate(fruit, new Vector3(x, y, 0), fruit.transform.rotation);
+        
+        //float time = 2f;
+        fruit.transform.position = new Vector3(0, -1, 0);
+        //yield return null;
+        /*        while (time > 0f)
+                {
+                    time -= 0.1f;
+                    //fruit.transform.Translate(Vector3.down * 1000);
+                    fruit.transform.position = new Vector3(0, -1, 0);
+                    yield return null;
+                }*/
     }
 }
