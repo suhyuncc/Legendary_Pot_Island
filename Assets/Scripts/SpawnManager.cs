@@ -97,4 +97,5 @@ public class SpawnManager : MonoBehaviour
         gameObject.SetActive(true);
         gameObject.transform.position = new Vector3(xPos, yPos, 0);
     }
+
 }
