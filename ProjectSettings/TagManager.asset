@@ -8,6 +8,8 @@ TagManager:
   - Item
   - Area
   - Cave
+  - Ground
+  - Boundary
   layers:
   - Default
   - TransparentFX

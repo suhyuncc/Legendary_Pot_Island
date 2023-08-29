@@ -8,9 +8,13 @@ public class FishingGame : MonoBehaviour
 {
     public static FishingGame instance;
 
+    [SerializeField]
+    private RawImage image;
+    [SerializeField]
+    private Texture[] textures;
+
     private Coroutine coroutine;
     public bool sliderUp;
-    public bool isSuccess;
     public Slider slider;
 
     private void Awake()
@@ -21,12 +25,14 @@ public class FishingGame : MonoBehaviour
     private void OnEnable()
     {
         coroutine = StartCoroutine(Slider());
+        image.texture = textures[0];
     }
 
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            image.texture = textures[1];
             StopCoroutine(coroutine);
             this.gameObject.SetActive(false);
         }
@@ -34,7 +40,7 @@ public class FishingGame : MonoBehaviour
 
     private void OnDisable()
     {
-        Player.Instance.moveSpeed = 6;
+        Boat.instance.boatSpeed = 6;
         Player.Instance.RayDestroy();
         Player.Instance.isFishing = false;
     }

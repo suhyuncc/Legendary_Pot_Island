@@ -19,6 +19,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         orign = new Color(image.color.r, image.color.g, image.color.b, 1);
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 0.3f);
         CheckingItem();
     }
 
@@ -34,6 +35,10 @@ public class Inventory : MonoBehaviour
         {
             image.color = orign;
             Tcount.gameObject.SetActive(true);
+        }
+        else
+        {
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 0.3f);
         }
 
         Tcount.text = $"X{item.count}";

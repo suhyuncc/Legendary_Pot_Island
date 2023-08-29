@@ -9,12 +9,12 @@ public class FishingGage : MonoBehaviour
         if (collision.gameObject.CompareTag("Area"))
         {
             Debug.Log("게임 성공");
-            FishingGame.instance.isSuccess = true;
+            Player.Instance.destroyedObject.GetComponent<Fish>().isCatched = true;
         }
         else
         {
             Debug.Log("게임 실패");
-            FishingGame.instance.isSuccess = false;
+            Player.Instance.destroyedObject.GetComponent<Fish>().isCatched = false;
         }
     }
 }

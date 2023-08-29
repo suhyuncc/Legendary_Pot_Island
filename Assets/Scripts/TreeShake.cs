@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TreeShake : MonoBehaviour
 {
+    [SerializeField]
+    private TextMeshProUGUI text_shake;
+
     public GameObject[] leaf = new GameObject[3];
     public GameObject[] fruit = new GameObject[3];
 
@@ -21,11 +25,16 @@ public class TreeShake : MonoBehaviour
     }
     void Update()
     {
-               
-        if (isShaked == false && Input.GetKeyDown(KeyCode.Space))
+        float distance = Vector3.Distance(transform.position, playerObject.transform.position);
+
+        if (distance < 3)
         {
-            float distance = Vector3.Distance(transform.position, playerObject.transform.position);
-            if (distance < 3)
+            if(!isShaked && !text_shake.gameObject.activeSelf)
+            {
+                text_shake.gameObject.SetActive(true);
+            }
+            
+            if (!isShaked && Input.GetKeyDown(KeyCode.Space))
             {
                 for (int i = 0; i < 3; i++)
                 {
@@ -33,11 +42,13 @@ public class TreeShake : MonoBehaviour
                 }
                 StartCoroutine(Shake());
                 isShaked = true;
+                text_shake.gameObject.SetActive(false);
             }
-            else
-            {
-                Debug.Log("가깝지 않아서 나무 흔들기 불가");
-            }
+        }
+        else
+        {
+            text_shake.gameObject.SetActive(false);
+            //Debug.Log("가깝지 않아서 나무 흔들기 불가");
         }
     }
 

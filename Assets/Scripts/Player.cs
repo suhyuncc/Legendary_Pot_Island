@@ -10,13 +10,17 @@ public class Player : MonoBehaviour
     private GameObject fishing;
 
     public bool isFishing;
+    public bool isSwimming;
     public float moveSpeed;
+    public float boatSpeed;
     private float prevMoveSpeed;
+    public float x;
+    public float y;
 
-    Animator anim;
+    public Animator anim;
     SpriteRenderer spriteRenderer;
 
-    private GameObject destroyedObject;
+    public GameObject destroyedObject;
     
 
     private void Awake()
@@ -27,6 +31,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         isFishing = false;
+        isSwimming = false;
         prevMoveSpeed = moveSpeed;
 
         anim = GetComponent<Animator>();
@@ -36,18 +41,29 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (isSwimming) 
+        {
+            this.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            moveSpeed = 0;
+        }
+        else
+        {
+            this.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            moveSpeed = prevMoveSpeed;
+        }
 
         Move();
     }
 
-    void Move()
+    public virtual void Move()
     {
 
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        x = Input.GetAxisRaw("Horizontal");
+        y = Input.GetAxisRaw("Vertical");
         Vector3 moveVelocity = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
         transform.position += moveVelocity;
-      
 
         if (x != 0)
         {
@@ -63,7 +79,8 @@ public class Player : MonoBehaviour
             anim.SetBool("lookFront", false);
             anim.SetBool("isWalking", false);
             anim.SetBool("lookBack", true);
-        }else if (y == -1)
+        }
+        else if (y == -1)
         {
             anim.SetBool("lookBack", false);
             anim.SetBool("isWalking", false);
@@ -79,49 +96,28 @@ public class Player : MonoBehaviour
             anim.speed = 1.0f;
         }
 
-
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        moveSpeed = 0;
+        if (!collision.gameObject.CompareTag("Boundary"))
+        {
+            moveSpeed = 0;
+            Boat.instance.boatSpeed = 0;
+        }
+        
+
         if (collision.gameObject.CompareTag("Item"))
         {
             destroyedObject = collision.gameObject;
             isFishing = true;
             Debug.Log("아이템 획득");
             fishing.SetActive(true);
-            
-            //Destroy(collision.gameObject);
-        }
-    }
-
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Sea")&& !isFishing)
-        {
-            //Debug.Log("수영중");
-            moveSpeed = 6;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Sea"))
-        {
-            //Debug.Log("수영끝");
-            moveSpeed = prevMoveSpeed;
-        }
-
-        if (collision.gameObject.CompareTag("Item"))
-        {
-            Destroy(collision.gameObject);
         }
     }
 
     public void RayDestroy()
     {
-        Destroy(destroyedObject);
+        destroyedObject.gameObject.SetActive(false);
     }
 }

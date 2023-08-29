@@ -5,13 +5,22 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     public Item item;
+    public bool isCatched = false;
 
-    private void OnDestroy()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (FishingGame.instance.isSuccess)
+        if (!collision.gameObject.CompareTag("Sea"))
+        {
+            SpawnManager.instance.FishSpawn(this.gameObject);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (isCatched)
         {
             item.count++;
-            FishingGame.instance.isSuccess = false;
+            isCatched = false;
         }
     }
 }
