@@ -15,3 +15,6 @@ MonoBehaviour:
   Name: "\uC0C8\uC1A1\uC774 \uBC84\uC12F"
   image: {fileID: 21300000, guid: 444284330c6c9d04cb62e5effd1813e5, type: 3}
   count: 0
+  health: 1
+  description: "\uBC84\uC12F\uC12C\uC5D0\uC11C\uB9CC \uC790\uB77C\uB294 \uAE34 \uBC84\uC12F.
+    \uC694\uB9AC\uD574 \uBA39\uC73C\uBA74 \uB354\uC6B1 \uAE30\uC6B4\uC774 \uB09C\uB2E4."

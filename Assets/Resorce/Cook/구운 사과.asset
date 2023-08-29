@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95495bf2643b0be46a3a2c604fa9f066, type: 3}
-  m_Name: "\uC5F0\uC5B4"
+  m_Name: "\uAD6C\uC6B4 \uC0AC\uACFC"
   m_EditorClassIdentifier: 
-  Name: "\uC5F0"
-  image: {fileID: 21300000, guid: 45e1f05f7c23b124ab36ce6fe1fed86d, type: 3}
-  count: 1
-  health: 3
-  description: "\uBC14\uB2E4\uB97C \uB3CC\uC544\uB2E4\uB2C8\uB294 \uC870\uAE08 \uD070
-    \uBB3C\uACE0\uAE30. \uC694\uB9AC\uD574 \uBA39\uC73C\uBA74 \uB354 \uB9DB\uC788\uB2E4."
+  Name: "\uAD6C\uC6B4 \uC0AC\uACFC"
+  image: {fileID: 21300000, guid: 758252c0abe8887478a1bf50aeee8e9a, type: 3}
+  count: 11
+  health: 2
+  description: "\uC0AC\uACFC\uB97C \uAD6C\uC6B4 \uC694\uB9AC. \uAD6C\uC6CC\uC11C
+    \uB354\uC6B1 \uD5A5\uAE0B\uD574\uC84C\uB2E4."

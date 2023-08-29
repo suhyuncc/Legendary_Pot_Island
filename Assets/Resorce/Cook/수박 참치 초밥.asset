@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95495bf2643b0be46a3a2c604fa9f066, type: 3}
+  m_Name: "\uC218\uBC15 \uCC38\uCE58 \uCD08\uBC25"
+  m_EditorClassIdentifier: 
+  Name: "\uC218\uBC15 \uCC38\uCE58 \uCD08\uBC25"
+  image: {fileID: 21300000, guid: 570c002f4d0ce90489e5103e5a9da94e, type: 3}
+  count: 0
+  health: 0
+  description: "\uC804\uC124\uB85C\uB9CC \uC804\uD574\uC838 \uB0B4\uB824\uC624\uB294
+    \uCD08\uBC25. \uC5B4\uB290 \uAC83\uC774 \uCC38\uCE58\uC774\uACE0 \uC5B4\uB290
+    \uAC83\uC774 \uC218\uBC15\uC778\uC9C0 \uAD6C\uBD84\uD558\uAE30 \uD798\uB4E4\uB2E4!
+    \uCE74\uD398\uD14C\uB9AC\uC544\uC5D0\uAC8C \uAC00\uC838\uB2E4 \uC8FC\uC790.) "

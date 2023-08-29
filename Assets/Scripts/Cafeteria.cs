@@ -59,14 +59,21 @@ public class Cafeteria : MonoBehaviour
     IEnumerator EatingMotion()
     {
         Debug.Log("모션 함수 실행");
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = EatingSprites[CafeteriaLevel];
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = EatingSprites[GameManager.instance.phase-1];
 
         yield return new WaitForSeconds(1f);
 
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = EndEatingSprites[CafeteriaLevel];
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = EndEatingSprites[GameManager.instance.phase-1];
         yield return new WaitForSeconds(2f);
-/*        this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[CafeteriaLevel];
-        yield return null;*/
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[GameManager.instance.phase - 1];
+        yield return new WaitForSeconds(2f);
+
+
+        UpgradePhase();
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[GameManager.instance.phase - 1];
+
+        yield return new WaitForSeconds(2f);
+
     }
     public void Feeding()
     {
@@ -76,5 +83,11 @@ public class Cafeteria : MonoBehaviour
         StartCoroutine(EatingMotion());
         //CafeteriaPanel.SetActive(true);
         
+    }
+
+    public void UpgradePhase()
+    {
+        GameManager.instance.phase++;
+        Debug.Log("업그레이드됨");
     }
 }

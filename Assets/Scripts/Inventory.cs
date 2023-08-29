@@ -24,6 +24,7 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
+
         orign = new Color(image.color.r, image.color.g, image.color.b, 1);
         image.color = new Color(image.color.r, image.color.g, image.color.b, 0.3f);
         CheckingItem();
@@ -65,11 +66,15 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
 
             if (item.name == "고등어")
             {
-                Debug.Log("배에 고등어 초밥을 먹였다!");
+                
+            }
+            else if (item.name == "꿀")
+            {
+               
             }
             else
             {
-                Debug.Log("item.name 잘못됨");
+                Debug.Log("먹을 수 없는 요리 (특수 요리)");
             }
         }
 
@@ -175,18 +180,38 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
 
         }
 
-        if (Cafeteria.instance.isFeeding == true)
+        if (item.count != 0&&Cafeteria.instance.isFeeding == true)
         {
-            Debug.Log("isFeeding 상태에서 클릭");
-            if (item.name == "고등어")
+            
+            if (item.name == "수박 참치 초밥")
             {
-                Debug.Log("배에 고등어를 먹였다~~ isFeeding true");
+                Debug.Log("특수요리 먹음");
+                item.count--;
+                Cafeteria.instance.Feeding();
+            } else if (item.name == "참치 파이")
+            {
+                Debug.Log("특수요리 먹음");
+                item.count--;
+                Cafeteria.instance.Feeding();
+            }
+            else if (item.name == "물고기 한상")
+            {
+                Debug.Log("특수요리 먹음");
+                item.count--;
+                Cafeteria.instance.Feeding();
+            }
+            else if (item.name == "버섯 수프")
+            {
+                Debug.Log("특수요리 먹음");
+                item.count--;
+                Cafeteria.instance.Feeding();
             }
             else
             {
-                Debug.Log("item.name 잘못됨");
+                Debug.Log("카페테리아가 먹을 수 없는 음식이다.");
             }
-            Cafeteria.instance.Feeding();
+
+            
         }
 
     }
