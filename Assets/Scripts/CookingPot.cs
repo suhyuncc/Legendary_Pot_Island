@@ -29,8 +29,10 @@ public class CookingPot : MonoBehaviour
     void Update()
     {
         
-        if (isCooking)
+        if (isCooking&&(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Escape)))
         {
+            CookingPanel.SetActive(false);
+            isCooking = false;
         }
         else
         {
@@ -65,9 +67,4 @@ public class CookingPot : MonoBehaviour
 
     }
 
-    void StartCooking()
-    {
-        Debug.Log("요리 버튼 눌림");
-
-    }
 }

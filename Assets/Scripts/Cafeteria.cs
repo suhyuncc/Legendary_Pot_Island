@@ -18,8 +18,6 @@ public class Cafeteria : MonoBehaviour
     [SerializeField]
     private Sprite[] EndEatingSprites;
 
-    private int CafeteriaLevel = 0;
-
     public GameObject CafeteriaPanel;
 
     void Start()

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: "\uAD6C\uC6B4 \uB808\uBAAC"
   m_EditorClassIdentifier: 
   Name: "\uAD6C\uC6B4 \uB808\uBAAC"
-  image: {fileID: 21300000, guid: eb746b9abdb660d4090f40957ffa5acf, type: 3}
-  count: 11
+  image: {fileID: 21300000, guid: 1a69a5d374fb87c4f9e1ebeef0aacab6, type: 3}
+  count: 15
   health: 2
   description: "\uB808\uBAAC\uC744 \uAD6C\uC6B4 \uC694\uB9AC. \uC5EC\uC804\uD788
     \uC2DC\uD07C\uD574 \uBCF4\uC778\uB2E4."

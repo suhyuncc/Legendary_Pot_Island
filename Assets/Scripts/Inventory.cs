@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEditor;
+
 
 public class Inventory : MonoBehaviour, IPointerClickHandler
 {
@@ -18,12 +20,25 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
 
     private int selectedCount = 0;
     //Inventory 밖으로 빼야함
-
+    
     private Color orign;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        Item thisItem = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/" + image.sprite.name + ".asset", typeof(Item));
+
+        item = thisItem;
+        //item.count = item.count + 10;
+        //테스트 하려고 개수 늘리는 코드~
+
+        if (item == null)
+        {
+            Debug.Log("오류발생");
+            Debug.Log(image.sprite.name);
+        }
 
         orign = new Color(image.color.r, image.color.g, image.color.b, 1);
         image.color = new Color(image.color.r, image.color.g, image.color.b, 0.3f);
@@ -62,20 +77,18 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
     {
         if (Cafeteria.instance.isFeeding == false && CookingPot.instance.isCooking == false)
         {
-            //그 외의 경우에 인벤토리를 열어서 아이템을 클릭했을 경우
+            if(item.count != 0)
+            {
+                Debug.Log(item.name + "를 선택했다. " + item.health + " "+item.description);
+                GameManager.instance.ItemPanel.SetActive(true);
+                GameManager.instance.ItemTitle.text = $"{item.Name}";
+                GameManager.instance.ItemDescription.text = $"{item.description}";
+                GameManager.instance.ItemImage.GetComponent<Image>().sprite= item.image;
 
-            if (item.name == "고등어")
-            {
-                
+                GameManager.instance.TempHp = item.health;
             }
-            else if (item.name == "꿀")
-            {
-               
-            }
-            else
-            {
-                Debug.Log("먹을 수 없는 요리 (특수 요리)");
-            }
+            //그 외의 경우에 인벤토리를 열어서 아이템을 클릭했을 경우
+            
         }
 
         if (item.count != 0&& selectedCount<5&& CookingPot.instance.isCooking==true)

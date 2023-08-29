@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Hungry : MonoBehaviour
 {
+    public static Hungry instance;
+
     [SerializeField]
     private Image[] images;
     [SerializeField]
@@ -12,13 +14,14 @@ public class Hungry : MonoBehaviour
     [SerializeField]
     private SaveData save;
 
-    private int HungryCount;
+    public int HungryCount;
 
     public float Maxtime = 120f;
     public float curtime = 0f;
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         HungryCount = 0;
     }
 
@@ -35,10 +38,10 @@ public class Hungry : MonoBehaviour
             save.HungryCount = HungryCount;
         }
 
-        
+
     }
 
-    void Checking()
+    public void Checking()
     {
         if(HungryCount % 2 == 0) 
         {
@@ -49,4 +52,31 @@ public class Hungry : MonoBehaviour
             images[HungryCount / 2].gameObject.SetActive(false);
         }
     }
+
+    public void EatChecking()
+    {
+       
+        for(int i= 20; i > HungryCount; i--)
+        {
+            if (i % 2 != 0)
+            {
+                images[i / 2].gameObject.SetActive(true);
+                images[i / 2].sprite = Sprites[0];
+            }
+            
+        }
+
+        if (HungryCount % 2 != 0)
+        {
+            images[HungryCount / 2].gameObject.SetActive(true);
+            images[HungryCount / 2].sprite = Sprites[1];
+        }
+        else
+        {
+            images[HungryCount / 2].gameObject.SetActive(true);
+            images[HungryCount / 2].sprite = Sprites[0];
+        }
+
+    }
+
 }
