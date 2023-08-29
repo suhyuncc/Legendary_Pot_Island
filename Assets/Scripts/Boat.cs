@@ -11,9 +11,11 @@ public class Boat : Player
     private TextMeshProUGUI text_shake;
     [SerializeField]
     private Sprite[] Sprites;
+    [SerializeField]
+    private GameObject[] boundarys;
 
     private GameObject playerObject;
-    private bool isBroading = false;
+    public bool isBroading = false;
 
     void Start()
     {
@@ -32,7 +34,7 @@ public class Boat : Player
         {
             float distance = Vector3.Distance(transform.position, playerObject.transform.position);
 
-            if (distance < 3)
+            if (distance < 5)
             {
                 if (!isBroading)
                 {
@@ -45,6 +47,7 @@ public class Boat : Player
                     Player.Instance.isSwimming = true;
                     isBroading = true;
                     text_shake.gameObject.SetActive(false);
+                    Invoke("Retrigger",0.8f);
                 }
             }
             else
@@ -53,6 +56,14 @@ public class Boat : Player
             }
         }
         
+    }
+
+    void Retrigger()
+    {
+        for (int i = 0; i < boundarys.Length; i++)
+        {
+            boundarys[i].gameObject.gameObject.GetComponent<EdgeCollider2D>().isTrigger = true;
+        }
     }
 
     public override void Move()

@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         {
             this.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            moveSpeed = prevMoveSpeed;
+            //moveSpeed = prevMoveSpeed;
         }
 
         Move();
@@ -105,7 +105,6 @@ public class Player : MonoBehaviour
             moveSpeed = 0;
             Boat.instance.boatSpeed = 0;
         }
-        
 
         if (collision.gameObject.CompareTag("Item"))
         {
@@ -113,6 +112,17 @@ public class Player : MonoBehaviour
             isFishing = true;
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
             fishing.SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boundary") && isSwimming)
+        {
+            moveSpeed = 10;
+            Boat.instance.isBroading = false;
+            isSwimming = false;
+            this.transform.position += new Vector3(5 * x, 5 * y, 0);
         }
     }
 

@@ -27,6 +27,7 @@ public class Cave : MonoBehaviour
         CaveMessage.SetActive(false);
         spawnManager.GetComponent<SpawnManager>().Respawn();
         StartCoroutine(Fade());
+        GameManager.instance.day++;
     }
 
     public void OnNo()

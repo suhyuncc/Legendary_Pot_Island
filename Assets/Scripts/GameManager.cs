@@ -1,15 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Inventroy;
+    public static GameManager instance;
+
+    [SerializeField]
+    private SaveData save;
+
+    public int day;
+    public int phase;
 
     private bool isActive;
+    private bool CookActive;
+
+    public GameObject Inventroy;
+    public GameObject Ingredient;
+    public GameObject Cook;
+    public TextMeshProUGUI dayText;
+    public TextMeshProUGUI phaseText;
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         isActive = false;
         Debug.Log(Inventroy.activeSelf);
     }
@@ -30,5 +47,31 @@ public class GameManager : MonoBehaviour
                 isActive = false;
             }
         }
+
+        if (isActive)
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                if (!CookActive)
+                {
+                    Ingredient.SetActive(false);
+                    Cook.SetActive(true);
+                    CookActive = true;
+                }
+                else
+                {
+                    Ingredient.SetActive(true);
+                    Cook.SetActive(false);
+                    CookActive = false;
+                }
+                
+            }
+        }
+
+        dayText.text = $"Day {day}";
+        phaseText.text = $"Phase {phase}";
+
+        save.Days = day;
+        save.PhaseNum = phase;
     }
 }
