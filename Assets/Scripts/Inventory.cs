@@ -59,8 +59,21 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
     }
     void ClickItem()
     {
-        //Debug.Log(item.name);
-        if (item.count != 0&& selectedCount<5)
+        if (Cafeteria.instance.isFeeding == false && CookingPot.instance.isCooking == false)
+        {
+            //그 외의 경우에 인벤토리를 열어서 아이템을 클릭했을 경우
+
+            if (item.name == "고등어")
+            {
+                Debug.Log("배에 고등어 초밥을 먹였다!");
+            }
+            else
+            {
+                Debug.Log("item.name 잘못됨");
+            }
+        }
+
+        if (item.count != 0&& selectedCount<5&& CookingPot.instance.isCooking==true)
         {
             item.count--;
             
@@ -160,7 +173,20 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
                 Debug.Log("item.name 잘못됨");
             }
 
+        }
 
+        if (Cafeteria.instance.isFeeding == true)
+        {
+            Debug.Log("isFeeding 상태에서 클릭");
+            if (item.name == "고등어")
+            {
+                Debug.Log("배에 고등어를 먹였다~~ isFeeding true");
+            }
+            else
+            {
+                Debug.Log("item.name 잘못됨");
+            }
+            Cafeteria.instance.Feeding();
         }
 
     }

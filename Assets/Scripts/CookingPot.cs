@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CookingPot : MonoBehaviour
 {
+    public static CookingPot instance;
+
     [SerializeField]
     private TextMeshProUGUI text_cook;
     [SerializeField]
@@ -12,13 +14,14 @@ public class CookingPot : MonoBehaviour
     //public TextMeshProUGUI text_cook;
 
 
-    private bool isCooking = false;
+    public bool isCooking = false;
 
     private GameObject playerObject;
 
     public GameObject CookingPanel;
     void Start()
     {
+        instance = this;
         playerObject = GameObject.FindWithTag("Player");
     }
 
