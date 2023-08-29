@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
     private Item item;
@@ -21,6 +22,8 @@ public class Inventory : MonoBehaviour
         orign = new Color(image.color.r, image.color.g, image.color.b, 1);
         image.color = new Color(image.color.r, image.color.g, image.color.b, 0.3f);
         CheckingItem();
+
+        
     }
 
     // Update is called once per frame
@@ -42,5 +45,19 @@ public class Inventory : MonoBehaviour
         }
 
         Tcount.text = $"X{item.count}";
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Click");
+        ClickItem();
+    }
+
+    void ClickItem()
+    {
+        
+        GameObject clickObject = EventSystem.current.currentSelectedGameObject;
+        Debug.Log(clickObject);
+        Debug.Log(clickObject.name + ", " + clickObject.GetComponentInChildren<Text>().text);
     }
 }
