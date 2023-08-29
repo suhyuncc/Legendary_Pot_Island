@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
-    public Item item;
+    public Item[] item = new Item[3];
     public bool isCatched = false;
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -19,7 +19,8 @@ public class Fish : MonoBehaviour
     {
         if (isCatched)
         {
-            item.count++;
+            int random= Random.Range(0, 3);
+            item[random].count++;
             isCatched = false;
         }
     }

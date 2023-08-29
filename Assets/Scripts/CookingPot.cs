@@ -9,7 +9,6 @@ public class CookingPot : MonoBehaviour
     private TextMeshProUGUI text_cook;
     [SerializeField]
 
-
     //public TextMeshProUGUI text_cook;
 
 
@@ -60,6 +59,12 @@ public class CookingPot : MonoBehaviour
     void Cooking()
     {
         CookingPanel.SetActive(true);
+
+    }
+
+    void StartCooking()
+    {
+        Debug.Log("요리 버튼 눌림");
 
     }
 }

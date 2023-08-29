@@ -125,7 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc051c0675fdd34482f234746f41528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 05695d6e7e2b7954285fabee811c760d, type: 2}
+  item:
+  - {fileID: 11400000, guid: 05695d6e7e2b7954285fabee811c760d, type: 2}
+  - {fileID: 11400000, guid: 782d088a57f167f4fb4050db975b84da, type: 2}
+  - {fileID: 11400000, guid: 369c2303d3601c9448f26808deb8401a, type: 2}
   isCatched: 0
 --- !u!50 &2207257538186305345
 Rigidbody2D:
