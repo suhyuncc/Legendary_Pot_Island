@@ -1,0 +1,623 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.13f1 (71691879b7f5) revision 7432472'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 22621.2134; Version 2009; 64bit' Language: 'ko' Physical Memory: 16080 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.13f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/whdms/Documents/GitHub/Legendary_Pot_Island/Assets
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+64876
+Successfully changed project path to: C:/Users/whdms/Documents/GitHub/Legendary_Pot_Island/Assets
+C:/Users/whdms/Documents/GitHub/Legendary_Pot_Island/Assets
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 51.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.13f1 (71691879b7f5)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/whdms/Documents/GitHub/Legendary_Pot_Island/Assets/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x9a49)
+    Vendor:   
+    VRAM:     8040 MB
+    Driver:   31.0.101.4032
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56972
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004706 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 32.70 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.556 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007615 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.189 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1390 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 67.2 MB.
+System memory in use after: 67.3 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1824.
+Total: 1.762900 ms (FindLiveObjects: 0.134300 ms CreateObjectMapping: 0.037800 ms MarkObjects: 1.524000 ms  DeleteObjects: 0.065600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/75a48a4b7235f514.png
+  artifactKey: Guid(26a16ac9043e7904e95b0bfe23f18b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/75a48a4b7235f514.png using Guid(26a16ac9043e7904e95b0bfe23f18b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '239b53c8c96fcc4ded6fab23efda48c2') in 0.118767 seconds 
+  Import took 0.121131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000414 seconds.
+  path: Assets/난파선1.png
+  artifactKey: Guid(d1dd421b05df66a4889d8639894b0579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/난파선1.png using Guid(d1dd421b05df66a4889d8639894b0579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f5ff8165d50b1e16fc83d0b19920d5d') in 0.021444 seconds 
+  Import took 0.023830 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/나무 잎_2.png
+  artifactKey: Guid(976075612b0a24d43aaed28ef521efae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/나무 잎_2.png using Guid(976075612b0a24d43aaed28ef521efae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10b7dcc068f883f44e96340249cda0f8') in 0.022220 seconds 
+  Import took 0.025077 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000381 seconds.
+  path: Assets/낚시 바.png
+  artifactKey: Guid(9bfb239720f9f6a4184df25e4a50ed16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/낚시 바.png using Guid(9bfb239720f9f6a4184df25e4a50ed16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fbfe5d4c15d704d4556563f570835d7') in 0.024816 seconds 
+  Import took 0.027383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Assets/1.prefab
+  artifactKey: Guid(2432abea1f4a9ba459bd168ebbf7ad62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/1.prefab using Guid(2432abea1f4a9ba459bd168ebbf7ad62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '171a911745fed7077350ea844ed2f5ae') in 0.095390 seconds 
+  Import took 0.097897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/나무 잎_3.png
+  artifactKey: Guid(406378c7bd3967e4a9abe66a55468a0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/나무 잎_3.png using Guid(406378c7bd3967e4a9abe66a55468a0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e61492a178e7472d5f49eb2071721eff') in 0.022398 seconds 
+  Import took 0.024873 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/낚시01.png
+  artifactKey: Guid(6513f60e7815917498ef362047778bbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/낚시01.png using Guid(6513f60e7815917498ef362047778bbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99c9f1084d8b42cd4d58b140c3a4b6c5') in 0.030258 seconds 
+  Import took 0.032864 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000408 seconds.
+  path: Assets/동굴.png
+  artifactKey: Guid(962297e1c2ac69041ad026aa2a5ce9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/동굴.png using Guid(962297e1c2ac69041ad026aa2a5ce9fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27374d4838205ee4ecb44c52a3d8cecd') in 0.040263 seconds 
+  Import took 0.043522 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/시작화면.png
+  artifactKey: Guid(366f830da59c43a49bf1b643e6d97567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/시작화면.png using Guid(366f830da59c43a49bf1b643e6d97567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f603b4fc22520ce504c3d7159242ef92') in 0.023949 seconds 
+  Import took 0.027067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000374 seconds.
+  path: Assets/쿠킹인벤토리.png
+  artifactKey: Guid(4d1ac3e34cd342443aaf98e91ffbb2dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/쿠킹인벤토리.png using Guid(4d1ac3e34cd342443aaf98e91ffbb2dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a03fafee087ac4315f01f74c1a69b32') in 0.028244 seconds 
+  Import took 0.031034 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000363 seconds.
+  path: Assets/과일섬.png
+  artifactKey: Guid(5d9cd142ea0d2044eab7217b2d436369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/과일섬.png using Guid(5d9cd142ea0d2044eab7217b2d436369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ebf07362e9cd0f5d189983bd607b2eb') in 0.023204 seconds 
+  Import took 0.025847 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/나무 줄기.png
+  artifactKey: Guid(060a1fba8656e1a4fb22b443a8f61201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/나무 줄기.png using Guid(060a1fba8656e1a4fb22b443a8f61201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd922d33f41132ec213a7c0f87cf805c1') in 0.021114 seconds 
+  Import took 0.023694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Assets/인벤토리_개별.png
+  artifactKey: Guid(ce7824570e881544684e43313b364e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/인벤토리_개별.png using Guid(ce7824570e881544684e43313b364e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6d93ed316d779e4899e4e647cce3539') in 0.022875 seconds 
+  Import took 0.025445 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/1.png
+  artifactKey: Guid(8083e1621af5a774e80a5b80b97b6e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/1.png using Guid(8083e1621af5a774e80a5b80b97b6e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9e8fa714f74f30cd2379c619eeefb8') in 0.024889 seconds 
+  Import took 0.027651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Assets/나무 잎_1.png
+  artifactKey: Guid(318c442eff794cc4689869333b206217) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/나무 잎_1.png using Guid(318c442eff794cc4689869333b206217) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5330d15808564cb63ca0856276529555') in 0.027911 seconds 
+  Import took 0.031168 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000383 seconds.
+  path: Assets/버섯섬.png
+  artifactKey: Guid(90414d75344428d409b6523c3958ba6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/버섯섬.png using Guid(90414d75344428d409b6523c3958ba6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '899340999538c897b4b4d4eef51aa263') in 0.024979 seconds 
+  Import took 0.028400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/물고기 그림자.png
+  artifactKey: Guid(28da04851582c8e45b58a4beacb7a86b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/물고기 그림자.png using Guid(28da04851582c8e45b58a4beacb7a86b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93a09fc8b2d578e925db57dfb89a0d79') in 0.022044 seconds 
+  Import took 0.025170 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000379 seconds.
+  path: Assets/마법 솥.png
+  artifactKey: Guid(13035299b16a21540befcf19ed8c2735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/마법 솥.png using Guid(13035299b16a21540befcf19ed8c2735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e424f852040030591e70db0e38e10c59') in 0.029409 seconds 
+  Import took 0.032099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/인벤토리_배경.png
+  artifactKey: Guid(c15a7dfee0e87b24088569fb5477e539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/인벤토리_배경.png using Guid(c15a7dfee0e87b24088569fb5477e539) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7f150d774496cdff1a615218fda1e54') in 0.022058 seconds 
+  Import took 0.024988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/2.png
+  artifactKey: Guid(d368062d9cc0d69448ae3bbc718de95f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2.png using Guid(d368062d9cc0d69448ae3bbc718de95f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaa68924b0fc3f8505e3af2d0832af55') in 0.030081 seconds 
+  Import took 0.032989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/낚시02.png
+  artifactKey: Guid(6d748ba89d24f3648898d0f8f8c2e0c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/낚시02.png using Guid(6d748ba89d24f3648898d0f8f8c2e0c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd37f34011babb0652bad40ed744d6ef') in 0.035390 seconds 
+  Import took 0.038281 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/낚시 물고기.png
+  artifactKey: Guid(8098f245dd47e5e479ea1248e5a1f3ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/낚시 물고기.png using Guid(8098f245dd47e5e479ea1248e5a1f3ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e3ef60db04387e117cfead6e11fd7ac') in 0.029052 seconds 
+  Import took 0.032147 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.930544 seconds.
+  path: Assets/Item/고등어.png
+  artifactKey: Guid(d3c42e9497404584fa08488127f90888) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/고등어.png using Guid(d3c42e9497404584fa08488127f90888) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3497e4e88a3b9d4fe4816299e8956cb8') in 0.023792 seconds 
+  Import took 0.026702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000510 seconds.
+  path: Assets/Item/사과.png
+  artifactKey: Guid(883c98ddfe45c8346a693b1ed8b53067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/사과.png using Guid(883c98ddfe45c8346a693b1ed8b53067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '775c6f92767544600f3610821b7d6067') in 0.021115 seconds 
+  Import took 0.023656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000655 seconds.
+  path: Assets/Item/레몬.png
+  artifactKey: Guid(3bb13e700a601d447ac65115501073b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/레몬.png using Guid(3bb13e700a601d447ac65115501073b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88761303e2d63c8bf9acee6a7af422f3') in 0.024040 seconds 
+  Import took 0.026763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000689 seconds.
+  path: Assets/Item/꿀.png
+  artifactKey: Guid(d06f054d9f891384b8f83568bf94965c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/꿀.png using Guid(d06f054d9f891384b8f83568bf94965c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e2f67df291f402a8e8ad643cf03eaa0') in 0.025077 seconds 
+  Import took 0.027420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000583 seconds.
+  path: Assets/Item/새송이 버섯.png
+  artifactKey: Guid(444284330c6c9d04cb62e5effd1813e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/새송이 버섯.png using Guid(444284330c6c9d04cb62e5effd1813e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db888081b62d4f3b0f2af3cf16ffcb66') in 0.021344 seconds 
+  Import took 0.023464 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000686 seconds.
+  path: Assets/Item/쌀.png
+  artifactKey: Guid(ea64e50ada0220f43936c96d48661a1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/쌀.png using Guid(ea64e50ada0220f43936c96d48661a1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac4fcbf790744f28f67b23a2b7019b74') in 0.025340 seconds 
+  Import took 0.028029 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000431 seconds.
+  path: Assets/Item/복숭아.png
+  artifactKey: Guid(6cdc6a2aafacfa94782c8d2b60134790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/복숭아.png using Guid(6cdc6a2aafacfa94782c8d2b60134790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dbb6eeeb1f28f5847ff9470fdea3c65') in 0.023298 seconds 
+  Import took 0.025876 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000518 seconds.
+  path: Assets/Item/수박.png
+  artifactKey: Guid(709ce5033d06e3f4b86ab80800d902a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/수박.png using Guid(709ce5033d06e3f4b86ab80800d902a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28e0cbe8ad0c8f1f3505655f646c914a') in 0.022455 seconds 
+  Import took 0.025298 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000543 seconds.
+  path: Assets/Item/연어.png
+  artifactKey: Guid(45e1f05f7c23b124ab36ce6fe1fed86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/연어.png using Guid(45e1f05f7c23b124ab36ce6fe1fed86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2d01b7568ae8c8bd553c69674d1c5fb') in 0.021679 seconds 
+  Import took 0.024456 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Item/고등어_test.png
+  artifactKey: Guid(65f1cbea540fdc54187e5c92acb0cb7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/고등어_test.png using Guid(65f1cbea540fdc54187e5c92acb0cb7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ac2b9de183780524ca0f82298f4c54e') in 0.024575 seconds 
+  Import took 0.026850 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000390 seconds.
+  path: Assets/Item/참치.png
+  artifactKey: Guid(859862f3f8a1c89498b1289c97d16097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/참치.png using Guid(859862f3f8a1c89498b1289c97d16097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b929bd3713475b0ec44110c54201772d') in 0.025547 seconds 
+  Import took 0.028020 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Item/밀.png
+  artifactKey: Guid(7bc33b17fb127c74c8d1af0558a5c535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/밀.png using Guid(7bc33b17fb127c74c8d1af0558a5c535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27411d2e0e8560a9d8de89eadf5b0457') in 0.020501 seconds 
+  Import took 0.022789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/Item/소금.png
+  artifactKey: Guid(fef9c4260d80d0644b26e91d98600577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/소금.png using Guid(fef9c4260d80d0644b26e91d98600577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5c5d2d7715a9c8b88f70ea3e46716ee') in 0.020317 seconds 
+  Import took 0.022878 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Item/양송이 버섯.png
+  artifactKey: Guid(15152d5dac6a9544fb8c270081d82ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/양송이 버섯.png using Guid(15152d5dac6a9544fb8c270081d82ff3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95708817e70cfa8e1616c7383977857c') in 0.018924 seconds 
+  Import took 0.021608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/Item/목이버섯.png
+  artifactKey: Guid(c4c76040ea7ffda4ab250d3f054b49a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/목이버섯.png using Guid(c4c76040ea7ffda4ab250d3f054b49a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df588f63babbe90ac5c6c701d827281e') in 0.019532 seconds 
+  Import took 0.022908 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000373 seconds.
+  path: Assets/Item/딸기.png
+  artifactKey: Guid(4af41ad0b19cd664d85c674869161378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Item/딸기.png using Guid(4af41ad0b19cd664d85c674869161378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82fb7d1d0e07ef87176e3e9a838e2587') in 0.019176 seconds 
+  Import took 0.021554 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/HangryShip/배_4_2.png
+  artifactKey: Guid(0e7f03e4aa3611449aca9e146d419855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_4_2.png using Guid(0e7f03e4aa3611449aca9e146d419855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9e9a02c9d8e233cb63bfa878251a5f8') in 0.034617 seconds 
+  Import took 0.037184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000427 seconds.
+  path: Assets/HangryShip/배_1_1.png
+  artifactKey: Guid(4f2cafa1d8bb44f498e6d50729773a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_1_1.png using Guid(4f2cafa1d8bb44f498e6d50729773a7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a777701d763850b01cfea559de823868') in 0.033038 seconds 
+  Import took 0.035622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/HangryShip/배_4_3.png
+  artifactKey: Guid(9de1720e09bc0e1428e0d53934ff504e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_4_3.png using Guid(9de1720e09bc0e1428e0d53934ff504e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0b59da0dd42daf39651e03598fb6657') in 0.032123 seconds 
+  Import took 0.034606 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000403 seconds.
+  path: Assets/HangryShip/배_2_2.png
+  artifactKey: Guid(d8d8380ca83537f4aa838bf743477b1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_2_2.png using Guid(d8d8380ca83537f4aa838bf743477b1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3b30c4fbb91c9eac079f886889d0913') in 0.027751 seconds 
+  Import took 0.031003 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000470 seconds.
+  path: Assets/HangryShip/배_4_1.png
+  artifactKey: Guid(31e4f5353321e2744a820d52d57fafb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_4_1.png using Guid(31e4f5353321e2744a820d52d57fafb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c369fec92687c043ece484820158cc08') in 0.031959 seconds 
+  Import took 0.034544 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/HangryShip/배_1_2.png
+  artifactKey: Guid(6b496a04b6a43a845b7d17c4536ea145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_1_2.png using Guid(6b496a04b6a43a845b7d17c4536ea145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c73aa2e1f7a9fa0fa64ca7e3b27a89c') in 0.029169 seconds 
+  Import took 0.031634 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/HangryShip/배_3_2.png
+  artifactKey: Guid(1d8ef7149768e4f4fac33700fb6cb017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_3_2.png using Guid(1d8ef7149768e4f4fac33700fb6cb017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '764862b9c3657ac01b8dc2ed0c5b2f41') in 0.032435 seconds 
+  Import took 0.035047 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/HangryShip/배_2_3.png
+  artifactKey: Guid(865977cef95e51d41a7f41ee02aac37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_2_3.png using Guid(865977cef95e51d41a7f41ee02aac37d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc3137bed515cc2dea8968a54372fe2f') in 0.032621 seconds 
+  Import took 0.035026 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000361 seconds.
+  path: Assets/HangryShip/배_3_1.png
+  artifactKey: Guid(ae884943bac31354594919aac5322c36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_3_1.png using Guid(ae884943bac31354594919aac5322c36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaa50819205a07ad923ca6f752a946fd') in 0.031597 seconds 
+  Import took 0.034028 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000369 seconds.
+  path: Assets/HangryShip/배_1_3.png
+  artifactKey: Guid(afa41eb28d862ff4abfd62bb35f33088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_1_3.png using Guid(afa41eb28d862ff4abfd62bb35f33088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fd426ed16b13554582d1d36459e2f28') in 0.030090 seconds 
+  Import took 0.032506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/HangryShip/배_3_3.png
+  artifactKey: Guid(8f8088cc9c99a69419b3cd5a0c23a3b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_3_3.png using Guid(8f8088cc9c99a69419b3cd5a0c23a3b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b13430c8cf1f80c7136b971a02bdc0a') in 0.031684 seconds 
+  Import took 0.034346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000489 seconds.
+  path: Assets/HangryShip/배_2_1.png
+  artifactKey: Guid(870196cdd9cd2134397bdba2e435873c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HangryShip/배_2_1.png using Guid(870196cdd9cd2134397bdba2e435873c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8ccc5c83756116a5232ff8d8ec9c8f6') in 0.029326 seconds 
+  Import took 0.031890 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016706 seconds.
+  path: Assets/Character/캐릭터_정면_1.png
+  artifactKey: Guid(2bfdb7b4583fd9a4e9120d28172cb7a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_정면_1.png using Guid(2bfdb7b4583fd9a4e9120d28172cb7a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cbef09248d98e9459a816f4e2203cfe') in 0.019623 seconds 
+  Import took 0.022207 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000412 seconds.
+  path: Assets/Character/캐릭터_정면_3.png
+  artifactKey: Guid(5817a7561200c2944b6f817d6bbb0a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_정면_3.png using Guid(5817a7561200c2944b6f817d6bbb0a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc1d1a62c16a9e07e689720528752f89') in 0.023179 seconds 
+  Import took 0.025669 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000440 seconds.
+  path: Assets/Character/캐릭터_후면_1.png
+  artifactKey: Guid(18c12fd46a680f047baf9ccc7172dcaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_후면_1.png using Guid(18c12fd46a680f047baf9ccc7172dcaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f242070262fd48f8922abcacc6fbdb6') in 0.021735 seconds 
+  Import took 0.024504 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000413 seconds.
+  path: Assets/Character/캐릭터_측면_2.png
+  artifactKey: Guid(9974cae7801662646ac25896a6ddf6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_측면_2.png using Guid(9974cae7801662646ac25896a6ddf6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0548f9f3e7fdea0d5d1f8b3cd3af215a') in 0.024615 seconds 
+  Import took 0.027445 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/Character/캐릭터_후면_3.png
+  artifactKey: Guid(4ac399bff3c289c45b14a95fb45ff486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_후면_3.png using Guid(4ac399bff3c289c45b14a95fb45ff486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0493b3c83aa69678b9c5c0207029609f') in 0.022865 seconds 
+  Import took 0.025506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/Character/캐릭터_후면_2.png
+  artifactKey: Guid(095cec00d0bf22841a6a92c427f8911a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_후면_2.png using Guid(095cec00d0bf22841a6a92c427f8911a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bec1e80b0fa704036f4353836ce4748') in 0.026385 seconds 
+  Import took 0.029721 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000319 seconds.
+  path: Assets/Character/캐릭터_정면_2.png
+  artifactKey: Guid(c2313790d29fbdd4789987a8f6b8ac8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_정면_2.png using Guid(c2313790d29fbdd4789987a8f6b8ac8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49cfe586122581f2cf21cb0f8944aedf') in 0.023579 seconds 
+  Import took 0.026156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Character/캐릭터_측면_1.png
+  artifactKey: Guid(358816aa6dfda0b46a137755363e2321) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_측면_1.png using Guid(358816aa6dfda0b46a137755363e2321) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3602278b4c51f1603917352fe61b371') in 0.027183 seconds 
+  Import took 0.030381 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000435 seconds.
+  path: Assets/Character/캐릭터_정면_2.png
+  artifactKey: Guid(c2313790d29fbdd4789987a8f6b8ac8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Character/캐릭터_정면_2.png using Guid(c2313790d29fbdd4789987a8f6b8ac8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49cfe586122581f2cf21cb0f8944aedf') in 0.020644 seconds 
+  Import took 0.023191 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.379640 seconds.
+  path: Assets/Boat/구명보트1.png
+  artifactKey: Guid(aa4b2972d85992746ae88604b55f35cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트1.png using Guid(aa4b2972d85992746ae88604b55f35cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a611f60472f2fee894ee08fb4a61fc0') in 0.019725 seconds 
+  Import took 0.022574 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000681 seconds.
+  path: Assets/Boat/구명보트5.png
+  artifactKey: Guid(39a4cc0451a60f44e9f0174920052280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트5.png using Guid(39a4cc0451a60f44e9f0174920052280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ed163eb2e52a5437567064797543dc1') in 0.021325 seconds 
+  Import took 0.024383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000398 seconds.
+  path: Assets/Boat/구명보트8.png
+  artifactKey: Guid(d95279c700e7b19459f7a46b80842fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트8.png using Guid(d95279c700e7b19459f7a46b80842fb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6981906b3d550a36acb26eaccb34627') in 0.022777 seconds 
+  Import took 0.025715 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000488 seconds.
+  path: Assets/Boat/구명보트6.png
+  artifactKey: Guid(14880d3138525274cb238230626ff022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트6.png using Guid(14880d3138525274cb238230626ff022) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2b08d7fdd513e9ca64aa2e7ba0a8bcf') in 0.029667 seconds 
+  Import took 0.032202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000521 seconds.
+  path: Assets/Boat/구명보트4.png
+  artifactKey: Guid(792c89431ccf6854a9500a219a804a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트4.png using Guid(792c89431ccf6854a9500a219a804a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eb7de4e6c783c0162752ea4438b22e0') in 0.021832 seconds 
+  Import took 0.024690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000437 seconds.
+  path: Assets/Boat/구명보트7.png
+  artifactKey: Guid(b849e62074b580641bbc775ddaff7c12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트7.png using Guid(b849e62074b580641bbc775ddaff7c12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec02f8ba0feac2c716cba6e7af1bb3e0') in 0.023540 seconds 
+  Import took 0.026131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000493 seconds.
+  path: Assets/Boat/구명보트2.png
+  artifactKey: Guid(c68568eb015c6384fa4d186e676479ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트2.png using Guid(c68568eb015c6384fa4d186e676479ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e330f06e02b00685b4123ae4f156a31b') in 0.022913 seconds 
+  Import took 0.026400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Boat/구명보트3.png
+  artifactKey: Guid(f28682fb680a4f5458b40a64dbfb7e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트3.png using Guid(f28682fb680a4f5458b40a64dbfb7e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbb156991071645c231e59fb129b53eb') in 0.019977 seconds 
+  Import took 0.023098 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001384 seconds.
+  path: Assets/Boat/구명보트2.png
+  artifactKey: Guid(c68568eb015c6384fa4d186e676479ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Boat/구명보트2.png using Guid(c68568eb015c6384fa4d186e676479ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e330f06e02b00685b4123ae4f156a31b') in 0.021618 seconds 
+  Import took 0.023849 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
