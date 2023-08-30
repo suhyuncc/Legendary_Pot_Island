@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hungry : MonoBehaviour
 {
@@ -50,6 +51,11 @@ public class Hungry : MonoBehaviour
         else
         {
             images[HungryCount / 2].gameObject.SetActive(false);
+        }
+
+        if (HungryCount >= 20)
+        {
+            SceneManager.LoadScene("BadScene");
         }
     }
 
