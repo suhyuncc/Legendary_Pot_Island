@@ -201,7 +201,7 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
                 Debug.Log("특수요리 먹음");
                 item.count--;
                 Cafeteria.instance.Feeding();
-            } else if (item.name == "참치 파이")
+            } else if (item.name == "참치파이")
             {
                 Debug.Log("특수요리 먹음");
                 item.count--;

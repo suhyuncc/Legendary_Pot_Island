@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 
         if (phase == 5)
         {
-            SceneManager.LoadScene("GoodScene");
+            SceneManager.LoadScene("GoodEnding");
         }
     }
 

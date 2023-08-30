@@ -55,7 +55,7 @@ public class Hungry : MonoBehaviour
 
         if (HungryCount >= 20)
         {
-            SceneManager.LoadScene("BadScene");
+            SceneManager.LoadScene("BadEnding");
         }
     }
 
