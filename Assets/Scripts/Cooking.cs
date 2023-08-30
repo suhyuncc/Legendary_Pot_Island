@@ -54,6 +54,8 @@ public class Cooking : MonoBehaviour
 
     public void CookingBtn()
     {
+        Player.Instance.moveSpeed = 10;
+
         Debug.Log("쿠킹버튼 누름");
         for (int i = 0; i < images.Length; i++)
         {

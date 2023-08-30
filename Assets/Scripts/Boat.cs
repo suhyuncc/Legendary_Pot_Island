@@ -8,8 +8,6 @@ public class Boat : Player
     public static Boat instance;
 
     [SerializeField]
-    private TextMeshProUGUI text_shake;
-    [SerializeField]
     private Sprite[] Sprites;
     [SerializeField]
     private GameObject[] boundarys;

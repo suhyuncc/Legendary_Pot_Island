@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         isActive = false;
-        Debug.Log(Inventroy.activeSelf);
     }
 
     // Update is called once per frame

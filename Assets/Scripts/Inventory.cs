@@ -28,7 +28,8 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
     void Start()
     {
 
-        Item thisItem = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/" + image.sprite.name + ".asset", typeof(Item));
+        Item thisItem = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/" 
+            + image.sprite.name + ".asset", typeof(Item));
 
         item = thisItem;
         //item.count = item.count + 10;

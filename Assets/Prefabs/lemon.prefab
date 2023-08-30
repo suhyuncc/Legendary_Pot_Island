@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7984457098190059329}
   - component: {fileID: 5722787689054906417}
   - component: {fileID: 4476749737780717648}
+  - component: {fileID: 886756667581767104}
   m_Layer: 0
   m_Name: lemon
   m_TagString: Item
@@ -98,6 +99,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.100000024, y: -0.14038467}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.509359
+--- !u!114 &886756667581767104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043461262336529290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1885ca5a489dd44d898236a882e37de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 892e3bf85fe52c64ca7c53b78a075dc6, type: 2}

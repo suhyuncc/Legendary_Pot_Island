@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95495bf2643b0be46a3a2c604fa9f066, type: 3}
   m_Name: "\uBCF5\uC22D\uC544"
   m_EditorClassIdentifier: 
-  Name: "\uBCF5\uC22D"
+  Name: "\uBCF5\uC22D\uC544"
   image: {fileID: 21300000, guid: 6cdc6a2aafacfa94782c8d2b60134790, type: 3}
-  count: 10
+  count: 27
   health: 2
   description: "\uB098\uBB34\uC5D0\uC11C \uC5F4\uB9AC\uB294 \uB2EC\uB2EC\uD55C \uACFC\uC77C.
     \uB531\uB531\uD560 \uC218\uB3C4, \uBB3C\uB801\uD560 \uC218\uB3C4 \uC788\uB2E4!

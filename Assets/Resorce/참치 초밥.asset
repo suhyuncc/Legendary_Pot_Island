@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\uCC38\uCE58 \uCD08\uBC25"
   image: {fileID: 21300000, guid: 0a88ab15b4b1c324db8b3e4732bfee9a, type: 3}
-  count: 3
+  count: 0
   health: 5
   description: "\uBC25 \uC704\uC5D0 \uCC38\uCE58 \uD68C\uB97C \uC62C\uB9B0 \uC694\uB9AC.
     \uACE0\uAE09\uC2A4\uB7EC\uC6B4 \uBD89\uC740 \uBE5B\uC774 \uAC10\uB3CC\uACE0 \uC788\uB2E4."

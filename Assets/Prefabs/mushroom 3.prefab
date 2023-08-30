@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7984457098190059329}
   - component: {fileID: 5722787689054906417}
   - component: {fileID: 4476749737780717648}
+  - component: {fileID: 486100678835999186}
   m_Layer: 0
   m_Name: mushroom 3
-  m_TagString: Item
+  m_TagString: Mush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,3 +102,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &486100678835999186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043461262336529290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1885ca5a489dd44d898236a882e37de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: a43e38f7fe5f40f468d9c7034b0b2ee7, type: 2}

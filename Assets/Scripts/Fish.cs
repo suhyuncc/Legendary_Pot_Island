@@ -19,8 +19,20 @@ public class Fish : MonoBehaviour
     {
         if (isCatched)
         {
-            int random= Random.Range(0, 3);
-            item[random].count++;
+            int random= Random.Range(0, 9);
+
+            if(random < 3)
+            {
+                item[0].count++;
+            }
+            else if(random >= 3 && random < 9) 
+            {
+                item[1].count++;
+            }
+            else
+            {
+                item[2].count++;
+            }
             isCatched = false;
         }
     }

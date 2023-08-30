@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,6 +9,10 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject fishing;
+    [SerializeField]
+    private GameObject BrokenPanel;
+
+    public TextMeshProUGUI text_shake;
 
     public bool isFishing;
     public bool isSwimming;
@@ -100,7 +105,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Boundary"))
+        destroyedObject = collision.gameObject;
+
+        if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Tree"))
         {
             moveSpeed = 0;
             Boat.instance.boatSpeed = 0;
@@ -108,10 +115,21 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Item"))
         {
-            destroyedObject = collision.gameObject;
+            Debug.Log("æ∆¿Ã≈€ »πµÊ");
+            Destroy(destroyedObject);
+        }
+
+        if (collision.gameObject.CompareTag("Fish"))
+        {
             isFishing = true;
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
             fishing.SetActive(true);
+        }
+
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            BrokenPanel.SetActive(true);
+            RayDestroy();
         }
     }
 
@@ -123,6 +141,22 @@ public class Player : MonoBehaviour
             Boat.instance.isBroading = false;
             isSwimming = false;
             this.transform.position += new Vector3(5 * x, 5 * y, 0);
+        }
+
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            Debug.Log("æ∆¿Ã≈€ »πµÊ");
+            destroyedObject = collision.gameObject;
+            destroyedObject.GetComponent<PickItem>().isPicked = true;
+            Destroy(destroyedObject);
+        }
+
+        if (collision.gameObject.CompareTag("Mush"))
+        {
+            Debug.Log("æ∆¿Ã≈€ »πµÊ");
+            destroyedObject = collision.gameObject;
+            destroyedObject.GetComponent<PickItem>().isPicked = true;
+            RayDestroy();
         }
     }
 

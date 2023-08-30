@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class TreeShake : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI text_shake;
 
     public GameObject[] leaf = new GameObject[3];
     public GameObject[] fruit = new GameObject[3];
 
     private Vector3[] originPos = new Vector3[3];
     private GameObject playerObject;
+
+    [SerializeField] 
+    private GameObject honey;
 
     private bool isShaked = false;
     void Start()
@@ -22,33 +23,25 @@ public class TreeShake : MonoBehaviour
         {
             fruit[i].GetComponent<CircleCollider2D>().enabled = false;
         }
+
+        int ran = Random.Range(0, 9);
+
+        if(ran < 3) 
+        {
+            honey.SetActive(true);
+        }
     }
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, playerObject.transform.position);
+        
+    }
 
-        if (distance < 3)
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && !isShaked)
         {
-            if(!isShaked && !text_shake.gameObject.activeSelf)
-            {
-                text_shake.gameObject.SetActive(true);
-            }
-            
-            if (!isShaked && Input.GetKeyDown(KeyCode.Space))
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    fruit[i].GetComponent<CircleCollider2D>().enabled = true;
-                }
-                StartCoroutine(Shake());
-                isShaked = true;
-                text_shake.gameObject.SetActive(false);
-            }
-        }
-        else
-        {
-            text_shake.gameObject.SetActive(false);
-            //Debug.Log("가깝지 않아서 나무 흔들기 불가");
+            StartCoroutine(Shake());
+            isShaked = true;
         }
     }
 
@@ -83,8 +76,16 @@ public class TreeShake : MonoBehaviour
         {
             time -= 0.1f;
             for (int i = 0; i < 3; i++)
+            {
                 fruit[i].transform.position = new Vector3(fruit[i].transform.position.x, fruit[i].transform.position.y - 0.2f, 0);
+                
+            }
+            
             yield return null;
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            fruit[i].GetComponent<CircleCollider2D>().enabled = true;
         }
     }
 }
