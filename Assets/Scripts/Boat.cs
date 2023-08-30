@@ -24,11 +24,7 @@ public class Boat : Player
     // Update is called once per frame
     void Update()
     { 
-        if(isBroading)
-        {
-            Move();
-        }
-        else
+        if(!isBroading)
         {
             float distance = Vector3.Distance(transform.position, playerObject.transform.position);
 
@@ -41,17 +37,22 @@ public class Boat : Player
 
                 if (!isBroading && Input.GetKeyDown(KeyCode.Space))
                 {
+                    isBroading = true;
                     playerObject.transform.position = transform.position;
                     Player.Instance.isSwimming = true;
-                    isBroading = true;
+                    
                     text_shake.gameObject.SetActive(false);
-                    Invoke("Retrigger",0.8f);
+                    Invoke("Retrigger", 0.8f);
                 }
             }
             else
             {
                 text_shake.gameObject.SetActive(false);
             }
+        }
+        else
+        {
+            Move();
         }
         
     }

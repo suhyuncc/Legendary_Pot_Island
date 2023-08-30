@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
         if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Tree"))
         {
             moveSpeed = 0;
-            Boat.instance.boatSpeed = 0;
+            
         }
 
         if (collision.gameObject.CompareTag("Item"))
@@ -121,6 +121,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Fish"))
         {
+            Boat.instance.boatSpeed = 0;
             isFishing = true;
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
             fishing.SetActive(true);
@@ -128,6 +129,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ship"))
         {
+            Boat.instance.boatSpeed = 0;
             BrokenPanel.SetActive(true);
             RayDestroy();
         }

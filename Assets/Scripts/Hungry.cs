@@ -44,19 +44,23 @@ public class Hungry : MonoBehaviour
 
     public void Checking()
     {
-        if(HungryCount % 2 == 0) 
-        {
-            images[HungryCount / 2].sprite = Sprites[1];
-        }
-        else
-        {
-            images[HungryCount / 2].gameObject.SetActive(false);
-        }
-
         if (HungryCount >= 20)
         {
             SceneManager.LoadScene("BadEnding");
         }
+        else
+        {
+            if (HungryCount % 2 == 0)
+            {
+                images[HungryCount / 2].sprite = Sprites[1];
+            }
+            else
+            {
+                images[HungryCount / 2].gameObject.SetActive(false);
+            }
+        }
+
+
     }
 
     public void EatChecking()
