@@ -95,8 +95,10 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
         if (item.count != 0&& selectedCount<5&& CookingPot.instance.isCooking==true)
         {
             item.count--;
-            
-            if (item.name == "고등어")
+            SelectItem.GetComponent<Cooking>().SelectedItem = item;
+            SelectItem.GetComponent<Cooking>().isClick = true;
+
+            /*if (item.name == "고등어")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 0;
                 SelectItem.GetComponent<Cooking>().isClick = true;
@@ -190,7 +192,7 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
             else
             {
                 Debug.Log("item.name 잘못됨");
-            }
+            }*/
 
         }
 

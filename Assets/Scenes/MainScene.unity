@@ -16422,6 +16422,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d06f054d9f891384b8f83568bf94965c, type: 3}
   ImageNum: 0
   isClick: 0
+  SelectedItem: {fileID: 0}
 --- !u!1 &986092338
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95495bf2643b0be46a3a2c604fa9f066, type: 3}
   m_Name: "\uC5F0\uC5B4"
   m_EditorClassIdentifier: 
-  Name: "\uC5F0"
+  Name: "\uC5F0\uC5B4"
   image: {fileID: 21300000, guid: 45e1f05f7c23b124ab36ce6fe1fed86d, type: 3}
   count: 0
   health: 3

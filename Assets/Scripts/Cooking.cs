@@ -15,10 +15,11 @@ public class Cooking : MonoBehaviour
     public int ImageNum;
     public bool isClick;
 
-    //private string[] SelectList = new string[5];
+    private Item Cooked;
+
+    public Item SelectedItem;
     List<string> SelectList = new List<string>();
 
-    private Item Cooked;
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +42,14 @@ public class Cooking : MonoBehaviour
             {
                 if (!images[i].gameObject.activeSelf)
                 {
-                    images[i].sprite = sprites[ImageNum];
+                    //images[i].sprite = sprites[ImageNum];
+                    images[i].sprite = SelectedItem.image;
                     images[i].gameObject.SetActive(true);
                     break;
                 }
             }
 
-            ImageNum = 0;
+            //ImageNum = 0;
             isClick = false;
         }
     }
@@ -145,10 +147,12 @@ public class Cooking : MonoBehaviour
         else if (SelectList.Contains("참치"))
         {
             Cooked = Cookeditem("참치구이");
+            Debug.Log("참치구이가 만들어짐");
         }
         else if (SelectList.Contains("사과"))
         {
             Cooked = Cookeditem("구운 사과");
+            Debug.Log("구운 사과가 만들어짐");
         }
         else if (SelectList.Contains("레몬"))
         {
@@ -163,13 +167,14 @@ public class Cooking : MonoBehaviour
         {
             Cooked = Cookeditem("구운 복숭아");
         }
-        else if (SelectList.Contains("버섯"))
+        else if (SelectList.Contains("양송이 버섯") || SelectList.Contains("새송이 버섯") || SelectList.Contains("목이 버섯"))
         {
             Cooked = Cookeditem("버섯 구이");
         }
         else
         {
-            //요리에 실패했다...
+            Cooked = null;
+            Debug.Log("요리에 실패했다..");
         }
 
 
