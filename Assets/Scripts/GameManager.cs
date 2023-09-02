@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject FailCookPanel;
 
+    public Item eatenItem;
+
     public int TempHp;
 
     // Start is called before the first frame update
@@ -97,11 +99,14 @@ public class GameManager : MonoBehaviour
         {
             Hungry.instance.HungryCount = 0;
             Hungry.instance.EatChecking();
+            eatenItem.count--;
         }
         else
         {
             Hungry.instance.HungryCount -= TempHp;
             Hungry.instance.EatChecking();
+            eatenItem.count--;
+
         }
 
         CookingPot.instance.isCooking = false;
@@ -111,6 +116,7 @@ public class GameManager : MonoBehaviour
     public void NoEat()
     {
         CookingPot.instance.isCooking = false;
+        eatenItem = null;
         ItemPanel.SetActive(false);
     }
 

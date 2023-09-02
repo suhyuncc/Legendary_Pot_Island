@@ -31,6 +31,9 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
         Item thisItem = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/" 
             + image.sprite.name + ".asset", typeof(Item));
 
+/*        GameObject thisItem = Resources.Load<GameObject>(image.sprite.name);
+        Item item = thisItem.GetComponent<Item>();
+*/
         item = thisItem;
         //item.count = item.count + 10;
         //테스트 하려고 개수 늘리는 코드~
@@ -87,6 +90,8 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
                 GameManager.instance.ItemImage.GetComponent<Image>().sprite= item.image;
 
                 GameManager.instance.TempHp = item.health;
+
+                GameManager.instance.eatenItem = item;
             }
             //그 외의 경우에 인벤토리를 열어서 아이템을 클릭했을 경우
             
