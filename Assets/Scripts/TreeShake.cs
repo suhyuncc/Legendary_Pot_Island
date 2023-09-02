@@ -38,8 +38,10 @@ public class TreeShake : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        //playerObject.GetComponent<Player>().space.gameObject.SetActive(true);
         if(collision.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && !isShaked)
         {
+            
             StartCoroutine(Shake());
             isShaked = true;
         }

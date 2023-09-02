@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CookingPot : MonoBehaviour
 {
@@ -10,8 +11,7 @@ public class CookingPot : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI text_cook;
     [SerializeField]
-
-    //public TextMeshProUGUI text_cook;
+    private Image spaceCook;
 
 
     public bool isCooking = false;
@@ -19,6 +19,7 @@ public class CookingPot : MonoBehaviour
     private GameObject playerObject;
 
     public GameObject CookingPanel;
+    private bool isBlink;
     void Start()
     {
         instance = this;
@@ -42,7 +43,7 @@ public class CookingPot : MonoBehaviour
             {
                 if (!isCooking)
                 {
-                    text_cook.gameObject.SetActive(true);
+                   spaceCook.gameObject.SetActive(true);
                 }
 
                 if (!isCooking && Input.GetKeyDown(KeyCode.Space))
@@ -51,12 +52,12 @@ public class CookingPot : MonoBehaviour
 
                     isCooking = true;
                     Cooking();
-                    text_cook.gameObject.SetActive(false);
+                    spaceCook.gameObject.SetActive(false);
                 }
             }
             else
             {
-                text_cook.gameObject.SetActive(false);
+                spaceCook.gameObject.SetActive(false);
             }
         }
     }

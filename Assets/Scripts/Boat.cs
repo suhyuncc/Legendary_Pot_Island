@@ -32,7 +32,8 @@ public class Boat : Player
             {
                 if (!isBroading)
                 {
-                    text_shake.gameObject.SetActive(true);
+                    space.gameObject.gameObject.SetActive(true);
+                    //text_shake.gameObject.SetActive(true);
                 }
 
                 if (!isBroading && Input.GetKeyDown(KeyCode.Space))
@@ -40,14 +41,15 @@ public class Boat : Player
                     isBroading = true;
                     playerObject.transform.position = transform.position;
                     Player.Instance.isSwimming = true;
-                    
-                    text_shake.gameObject.SetActive(false);
+                    space.gameObject.gameObject.SetActive(false);
+                    //text_shake.gameObject.SetActive(false);
                     Invoke("Retrigger", 0.8f);
                 }
             }
             else
             {
-                text_shake.gameObject.SetActive(false);
+                space.gameObject.gameObject.SetActive(false);
+                //text_shake.gameObject.SetActive(false);
             }
         }
         else

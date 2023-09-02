@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 public class Cafeteria : MonoBehaviour
 {
     public static Cafeteria instance;
 
     private GameObject playerObject;
     public bool isFeeding=false;
+
+    [SerializeField]
+    private Image spaceFeed;
 
     [SerializeField]
     private TextMeshProUGUI text_feed;
@@ -45,7 +50,7 @@ public class Cafeteria : MonoBehaviour
 
                 if (!isFeeding)
                 {
-                    text_feed.gameObject.SetActive(true);
+                    spaceFeed.gameObject.SetActive(true);
                 }
 
                 if (!isFeeding && Input.GetKeyDown(KeyCode.Space))
@@ -54,12 +59,12 @@ public class Cafeteria : MonoBehaviour
 
                     isFeeding = true;
                     CafeteriaPanel.SetActive(true);
-                    text_feed.gameObject.SetActive(false);
+                    spaceFeed.gameObject.SetActive(false);
                 }
             }
             else
             {
-                text_feed.gameObject.SetActive(false);
+                spaceFeed.gameObject.SetActive(false);
             }
         }
         
@@ -81,13 +86,13 @@ public class Cafeteria : MonoBehaviour
         UpgradePhase();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[GameManager.instance.phase - 1];
 
+        isFeeding = false;
         yield return new WaitForSeconds(2f);
 
     }
     public void Feeding()
     {
         Debug.Log("Feeding 함수 실행");
-        isFeeding = false;
         CafeteriaPanel.SetActive(false);
         StartCoroutine(EatingMotion());
         //CafeteriaPanel.SetActive(true);

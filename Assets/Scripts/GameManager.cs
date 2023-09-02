@@ -29,7 +29,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI ItemTitle;
     public TextMeshProUGUI ItemDescription;
     public Image ItemImage;
-    
+
+    public GameObject FailCookPanel;
+
     public int TempHp;
 
     // Start is called before the first frame update
@@ -101,12 +103,25 @@ public class GameManager : MonoBehaviour
             Hungry.instance.HungryCount -= TempHp;
             Hungry.instance.EatChecking();
         }
-       
+
+        CookingPot.instance.isCooking = false;
         ItemPanel.SetActive(false);
     }
 
     public void NoEat()
     {
+        CookingPot.instance.isCooking = false;
         ItemPanel.SetActive(false);
+    }
+
+    public void CloseFailCookPanel()
+    {
+        CookingPot.instance.isCooking = false;
+        FailCookPanel.SetActive(false);
+    }
+
+    public void SaveAndExit()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }

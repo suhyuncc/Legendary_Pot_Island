@@ -167,14 +167,14 @@ public class Cooking : MonoBehaviour
         {
             Cooked = Cookeditem("备款 汗件酒");
         }
-        else if (SelectList.Contains("剧价捞 滚几") || SelectList.Contains("货价捞 滚几") || SelectList.Contains("格捞 滚几"))
+        else if (SelectList.Contains("剧价捞 滚几") || SelectList.Contains("货价捞 滚几") || SelectList.Contains("格捞滚几"))
         {
             Cooked = Cookeditem("滚几 备捞");
         }
         else
         {
             Cooked = null;
-            Debug.Log("夸府俊 角菩沁促..");
+            GameManager.instance.FailCookPanel.SetActive(true);
         }
 
 
@@ -188,7 +188,7 @@ public class Cooking : MonoBehaviour
         }
         
         CookingPot.instance.CookingPanel.SetActive(false);
-        CookingPot.instance.isCooking = false;
+        //CookingPot.instance.isCooking = false;
 
         //Debug.Log(SelectList.Contains("叠扁"));
         SelectList.Clear();
