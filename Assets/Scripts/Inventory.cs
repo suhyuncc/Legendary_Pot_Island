@@ -206,26 +206,35 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
             
             if (item.name == "수박 참치 초밥")
             {
-                Debug.Log("특수요리 먹음");
-                item.count--;
-                Cafeteria.instance.Feeding();
-            } else if (item.name == "참치파이")
+                if (GameManager.instance.phase == 4)
+                {
+                    item.count--;
+                    CafeteriaPanel.instance.feed = true;
+                }
+            } 
+            else if (item.name == "참치파이")
             {
-                Debug.Log("특수요리 먹음");
-                item.count--;
-                Cafeteria.instance.Feeding();
+                if (GameManager.instance.phase == 2)
+                {
+                    item.count--;
+                    CafeteriaPanel.instance.feed = true;
+                }
             }
             else if (item.name == "물고기 한상")
             {
-                Debug.Log("특수요리 먹음");
-                item.count--;
-                Cafeteria.instance.Feeding();
+                if(GameManager.instance.phase == 1)
+                {
+                    item.count--;
+                    CafeteriaPanel.instance.feed = true;
+                }
             }
             else if (item.name == "버섯 수프")
             {
-                Debug.Log("특수요리 먹음");
-                item.count--;
-                Cafeteria.instance.Feeding();
+                if (GameManager.instance.phase == 3)
+                {
+                    item.count--;
+                    CafeteriaPanel.instance.feed = true;
+                }
             }
             else
             {

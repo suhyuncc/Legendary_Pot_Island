@@ -43,6 +43,7 @@ public class SpawnManager : MonoBehaviour
         MushRoomprefabs = new GameObject[40];
         Init();
         GetObject(GameManager.instance.phase);
+        Player.Instance.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
     void Update()
@@ -247,7 +248,6 @@ public class SpawnManager : MonoBehaviour
     public void ShipSpawn()
     {
         int spawn = Random.Range(0, 10);
-        Debug.Log(spawn);
         if(spawn < 3)
         {
             int area = Random.Range(0, 2);

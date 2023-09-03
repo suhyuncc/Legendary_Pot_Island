@@ -35,37 +35,28 @@ public class Cafeteria : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float distance = Vector3.Distance(transform.position, playerObject.transform.position);
 
-        if (isFeeding && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape)))
+        if (distance < 11)
         {
-            CafeteriaPanel.SetActive(false);
-            isFeeding = false;
+
+            if (!isFeeding)
+            {
+                spaceFeed.gameObject.SetActive(true);
+            }
+
+            if (!isFeeding && Input.GetKeyDown(KeyCode.Space))
+            {
+                // ÄíÅ· ½ÃÀÛ!
+
+                isFeeding = true;
+                CafeteriaPanel.SetActive(true);
+                spaceFeed.gameObject.SetActive(false);
+            }
         }
         else
         {
-            float distance = Vector3.Distance(transform.position, playerObject.transform.position);
-            
-            if (distance < 11)
-            {
-
-                if (!isFeeding)
-                {
-                    spaceFeed.gameObject.SetActive(true);
-                }
-
-                if (!isFeeding && Input.GetKeyDown(KeyCode.Space))
-                {
-                    // ÄíÅ· ½ÃÀÛ!
-
-                    isFeeding = true;
-                    CafeteriaPanel.SetActive(true);
-                    spaceFeed.gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                spaceFeed.gameObject.SetActive(false);
-            }
+            spaceFeed.gameObject.SetActive(false);
         }
         
     }
