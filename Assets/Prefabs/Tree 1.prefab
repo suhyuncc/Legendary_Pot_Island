@@ -331,7 +331,6 @@ GameObject:
   - component: {fileID: 8507200316676056479}
   - component: {fileID: 8507200316676056478}
   - component: {fileID: 8507200316676056477}
-  - component: {fileID: 6639316964687449934}
   m_Layer: 0
   m_Name: Tree 1
   m_TagString: Tree
@@ -379,6 +378,8 @@ MonoBehaviour:
   - {fileID: 1637280670041091524}
   - {fileID: 8017630901170614851}
   honey: {fileID: 4643989653252816744, guid: 318eddcc7d440ac49957da1cb972e3e9, type: 3}
+  isShaked: 0
+  isTreeArea: 0
 --- !u!61 &8507200316676056477
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -405,27 +406,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83285207, y: 2.5223918}
   m_EdgeRadius: 0
---- !u!50 &6639316964687449934
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507200316676056476}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!1 &8507200316810823493
 GameObject:
   m_ObjectHideFlags: 0

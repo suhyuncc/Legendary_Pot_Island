@@ -25,10 +25,9 @@ public class Player : MonoBehaviour
     public float y;
 
     public Animator anim;
-    SpriteRenderer spriteRenderer;
-
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
     public GameObject destroyedObject;
-    
 
     private void Awake()
     {
@@ -43,7 +42,7 @@ public class Player : MonoBehaviour
 
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -69,8 +68,12 @@ public class Player : MonoBehaviour
 
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
-        Vector3 moveVelocity = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
+        Vector3 moveVelocity = new Vector3(x, y, 0).normalized * moveSpeed * Time.deltaTime;
+        //rb.velocity = moveVelocity;
+        //rb.MovePosition(transform.position + moveVelocity);
         transform.position += moveVelocity;
+
+        //rb.MovePosition(transform.position + moveVelocity);
 
         if (x != 0)
         {
@@ -109,11 +112,11 @@ public class Player : MonoBehaviour
     {
         destroyedObject = collision.gameObject;
 
-        if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Tree"))
+/*        if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Tree"))
         {
             moveSpeed = 0;
-            
-        }
+            //냄비에 닿으면 속도 0되는 문제
+        }*/
 
         if (collision.gameObject.CompareTag("Item"))
         {
@@ -141,7 +144,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boundary") && isSwimming)
         {
-            moveSpeed = 10;
+            moveSpeed = prevMoveSpeed;
             Boat.instance.isBroading = false;
             isSwimming = false;
             this.transform.position += new Vector3(5 * x, 5 * y, 0);
@@ -161,6 +164,21 @@ public class Player : MonoBehaviour
             destroyedObject = collision.gameObject;
             destroyedObject.GetComponent<PickItem>().isPicked = true;
             RayDestroy();
+        }
+
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            space.gameObject.SetActive(true);
+            collision.gameObject.transform.GetChild(0).GetComponent<TreeShake>().isTreeArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            space.gameObject.SetActive(false);
+            collision.gameObject.transform.GetChild(0).GetComponent<TreeShake>().isTreeArea = false;
         }
     }
 
