@@ -85,23 +85,20 @@ public class Cooking : MonoBehaviour
         {
             Cooked = Cookeditem("¹°°í±â ÇÑ»ó");
         }
-        else if (SelectList.Contains("²Ü"))
+        else if(SelectList.Contains("²Ü")&&SelectList.Contains("»ç°ú") && (SelectList.Contains("·¹¸ó")|| SelectList.Contains("º¹¼þ¾Æ")|| SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú")))
         {
-            if(SelectList.Contains("»ç°ú") && SelectList.Contains("·¹¸ó")|| SelectList.Contains("º¹¼þ¾Æ")|| SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú"))
-            {
+            Cooked = Cookeditem("°úÀÏ Á¶¸²");
+        }else if (SelectList.Contains("²Ü") && SelectList.Contains("·¹¸ó") && (SelectList.Contains("º¹¼þ¾Æ") || SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú")))
+        {
                 Cooked = Cookeditem("°úÀÏ Á¶¸²");
-            }else if (SelectList.Contains("·¹¸ó") && SelectList.Contains("º¹¼þ¾Æ") || SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú"))
-            {
+        }
+        else if (SelectList.Contains("²Ü") && SelectList.Contains("º¹¼þ¾Æ") && (SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú")))
+        {
                 Cooked = Cookeditem("°úÀÏ Á¶¸²");
-            }
-            else if (SelectList.Contains("º¹¼þ¾Æ") && SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú"))
-            {
+        }
+        else if (SelectList.Contains("²Ü") && SelectList.Contains("µþ±â") && SelectList.Contains("¼ö¹Ú"))
+        {
                 Cooked = Cookeditem("°úÀÏ Á¶¸²");
-            }
-            else if (SelectList.Contains("µþ±â") && SelectList.Contains("¼ö¹Ú"))
-            {
-                Cooked = Cookeditem("°úÀÏ Á¶¸²");
-            }
         }
         else if (SelectList.Contains("¾ç¼ÛÀÌ ¹ö¼¸") && SelectList.Contains("»õ¼ÛÀÌ ¹ö¼¸") && SelectList.Contains("¸ñÀÌ ¹ö¼¸"))
         {
@@ -175,6 +172,7 @@ public class Cooking : MonoBehaviour
         {
             Cooked = null;
             GameManager.instance.FailCookPanel.SetActive(true);
+            Debug.Log("¿ä¸® ½ÇÆÐ");
         }
 
 
@@ -201,7 +199,9 @@ public class Cooking : MonoBehaviour
 
     public Item Cookeditem(string itemName)
     {
-        Item Cooked = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/" + itemName + ".asset", typeof(Item));
+        //Item Cooked = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/" + itemName + ".asset", typeof(Item));
+        
+        Cooked =ItemManager.Instance.ItemList.Find(x => x.name == itemName);
         Cooked.count++;
         return Cooked;
     }

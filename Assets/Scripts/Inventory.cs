@@ -27,14 +27,7 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-
-        Item thisItem = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/" 
-            + image.sprite.name + ".asset", typeof(Item));
-
-/*        GameObject thisItem = Resources.Load<GameObject>(image.sprite.name);
-        Item item = thisItem.GetComponent<Item>();
-*/
-        item = thisItem;
+        item = ItemManager.Instance.ItemList.Find(x => x.name == image.sprite.name);
         //item.count = item.count + 10;
         //테스트 하려고 개수 늘리는 코드~
 

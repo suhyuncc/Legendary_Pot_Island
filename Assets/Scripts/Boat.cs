@@ -22,7 +22,7 @@ public class Boat : Player
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate() //원래는 그냥 Update
     { 
         if(!isBroading)
         {
@@ -71,7 +71,8 @@ public class Boat : Player
     {
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
-        Vector3 moveVelocity = new Vector3(x, y, 0) * boatSpeed * Time.deltaTime;
+        Vector3 moveVelocity = new Vector3(x, y, 0) * boatSpeed * Time.fixedDeltaTime;
+
         transform.position += moveVelocity;
         playerObject.transform.position = transform.position;
 

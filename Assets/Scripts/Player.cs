@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isSwimming) 
         {
@@ -68,12 +68,9 @@ public class Player : MonoBehaviour
 
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
-        Vector3 moveVelocity = new Vector3(x, y, 0).normalized * moveSpeed * Time.deltaTime;
-        //rb.velocity = moveVelocity;
-        //rb.MovePosition(transform.position + moveVelocity);
-        transform.position += moveVelocity;
-
-        //rb.MovePosition(transform.position + moveVelocity);
+        Vector3 moveVelocity = new Vector3(x, y, 0).normalized * moveSpeed * Time.fixedDeltaTime;
+        rb.MovePosition(transform.position + moveVelocity);
+        //transform.position += moveVelocity;
 
         if (x != 0)
         {
