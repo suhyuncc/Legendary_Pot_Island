@@ -209,7 +209,12 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
                 if (GameManager.instance.phase == 4)
                 {
                     item.count--;
+                    CafeteriaPanel.instance.Cafeteria_text.text = "이거야!";
                     CafeteriaPanel.instance.feed = true;
+                }
+                else
+                {
+                    CafeteriaPanel.instance.Cafeteria_text.text = "그게 아니야!";
                 }
             } 
             else if (item.name == "참치파이")
@@ -217,7 +222,12 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
                 if (GameManager.instance.phase == 2)
                 {
                     item.count--;
+                    CafeteriaPanel.instance.Cafeteria_text.text = "이거야!";
                     CafeteriaPanel.instance.feed = true;
+                }
+                else
+                {
+                    CafeteriaPanel.instance.Cafeteria_text.text = "그게 아니야!";
                 }
             }
             else if (item.name == "물고기 한상")
@@ -225,7 +235,12 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
                 if(GameManager.instance.phase == 1)
                 {
                     item.count--;
+                    CafeteriaPanel.instance.Cafeteria_text.text = "이거야!";
                     CafeteriaPanel.instance.feed = true;
+                }
+                else
+                {
+                    CafeteriaPanel.instance.Cafeteria_text.text = "그게 아니야!";
                 }
             }
             else if (item.name == "버섯 수프")
@@ -233,12 +248,17 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
                 if (GameManager.instance.phase == 3)
                 {
                     item.count--;
+                    CafeteriaPanel.instance.Cafeteria_text.text = "이거야!";
                     CafeteriaPanel.instance.feed = true;
+                }
+                else
+                {
+                    CafeteriaPanel.instance.Cafeteria_text.text = "그게 아니야!";
                 }
             }
             else
             {
-                Debug.Log("카페테리아가 먹을 수 없는 음식이다.");
+                CafeteriaPanel.instance.Cafeteria_text.text = "그게 아니야!";
             }
 
             

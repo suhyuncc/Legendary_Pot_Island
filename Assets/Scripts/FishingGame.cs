@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,14 +17,18 @@ public class FishingGame : MonoBehaviour
     private Coroutine coroutine;
     public bool sliderUp;
     public Slider slider;
+    public int Fishindex;
+    public GameObject gettingPool;
 
     private void Awake()
     {
         instance = this;
+        
     }
 
     private void OnEnable()
     {
+        Fishindex = 3;
         coroutine = StartCoroutine(Slider());
         image.texture = textures[0];
     }
@@ -43,10 +48,13 @@ public class FishingGame : MonoBehaviour
         Boat.instance.boatSpeed = 6;
         Player.Instance.RayDestroy();
         Player.Instance.isFishing = false;
+        FishGet(Fishindex);
     }
 
     IEnumerator Slider()
     {
+        float speed = Random.Range(0.3f, 0.9f);
+
         slider.value = 0;
         sliderUp = true;
         while (true)
@@ -62,14 +70,70 @@ public class FishingGame : MonoBehaviour
 
             if (sliderUp)
             {
-                slider.value += 0.3f * Time.deltaTime;
+                slider.value += speed * Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
             else
             {
-                slider.value -= 0.3f * Time.deltaTime;
+                slider.value -= speed * Time.deltaTime;
                 yield return new WaitForSeconds(0.001f);
             }
         }
+    }
+
+    private void FishGet(int index)
+    {
+        switch(index)
+        {
+            case 0:
+                for (int i = 0; i < gettingPool.transform.childCount; i++)
+                {
+                    if (!gettingPool.transform.GetChild(i).gameObject.activeSelf)
+                    {
+                        gettingPool.transform.GetChild(i).gameObject.SetActive(true);
+                        gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
+                            = "°íµî¾î¸¦ È¹µæÇÏ¿´½À´Ï´Ù!!";
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                for (int i = 0; i < gettingPool.transform.childCount; i++)
+                {
+                    if (!gettingPool.transform.GetChild(i).gameObject.activeSelf)
+                    {
+                        gettingPool.transform.GetChild(i).gameObject.SetActive(true);
+                        gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
+                            = "¿¬¾î¸¦ È¹µæÇÏ¿´½À´Ï´Ù!!";
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                for (int i = 0; i < gettingPool.transform.childCount; i++)
+                {
+                    if (!gettingPool.transform.GetChild(i).gameObject.activeSelf)
+                    {
+                        gettingPool.transform.GetChild(i).gameObject.SetActive(true);
+                        gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
+                            = "ÂüÄ¡¸¦ È¹µæÇÏ¿´½À´Ï´Ù!!";
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                for (int i = 0; i < gettingPool.transform.childCount; i++)
+                {
+                    if (!gettingPool.transform.GetChild(i).gameObject.activeSelf)
+                    {
+                        gettingPool.transform.GetChild(i).gameObject.SetActive(true);
+                        gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
+                            = "³õÃÆ´Ù!!";
+                        break;
+                    }
+                }
+                break;
+        }
+        Fishindex = 3;
     }
 }

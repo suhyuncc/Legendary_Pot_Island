@@ -29,6 +29,7 @@ public class Cafeteria : MonoBehaviour
     {
         instance = this;
         playerObject = GameObject.FindWithTag("Player");
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[GameManager.instance.phase - 1];
     }
 
 
@@ -64,21 +65,27 @@ public class Cafeteria : MonoBehaviour
     IEnumerator EatingMotion()
     {
         Debug.Log("모션 함수 실행");
+        Player.Instance.moveSpeed = 0;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = EatingSprites[GameManager.instance.phase-1];
 
         yield return new WaitForSeconds(1f);
 
         this.gameObject.GetComponent<SpriteRenderer>().sprite = EndEatingSprites[GameManager.instance.phase-1];
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[GameManager.instance.phase - 1];
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
 
         UpgradePhase();
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[GameManager.instance.phase - 1];
+        if(GameManager.instance.phase < 5)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[GameManager.instance.phase - 1];
+        }
+        
 
         isFeeding = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        Player.Instance.moveSpeed = 10;
 
     }
     public void Feeding()

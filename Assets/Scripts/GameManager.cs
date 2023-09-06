@@ -36,11 +36,19 @@ public class GameManager : MonoBehaviour
 
     public int TempHp;
 
+    private void Awake()
+    {
+        instance = this;
+        day = save.Days;
+        phase = save.PhaseNum;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
         isActive = false;
+
+        
     }
 
     // Update is called once per frame

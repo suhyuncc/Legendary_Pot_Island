@@ -28,7 +28,8 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     public GameObject destroyedObject;
-    
+    public GameObject gettingPool;
+
 
     private void Awake()
     {
@@ -137,6 +138,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Boundary") && isSwimming)
@@ -152,6 +154,16 @@ public class Player : MonoBehaviour
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
             destroyedObject = collision.gameObject;
             destroyedObject.GetComponent<PickItem>().isPicked = true;
+            for (int i = 0; i < gettingPool.transform.childCount; i++)
+            {
+                if (!gettingPool.transform.GetChild(i).gameObject.activeSelf)
+                {
+                    gettingPool.transform.GetChild(i).gameObject.SetActive(true);
+                    gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
+                        = $"{destroyedObject.GetComponent<PickItem>().item.name}∏¶ »πµÊ«œø¥Ω¿¥œ¥Ÿ!!";
+                    break;
+                }
+            }
             Destroy(destroyedObject);
         }
 
@@ -160,6 +172,16 @@ public class Player : MonoBehaviour
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
             destroyedObject = collision.gameObject;
             destroyedObject.GetComponent<PickItem>().isPicked = true;
+            for (int i = 0; i < gettingPool.transform.childCount; i++)
+            {
+                if (!gettingPool.transform.GetChild(i).gameObject.activeSelf)
+                {
+                    gettingPool.transform.GetChild(i).gameObject.SetActive(true);
+                    gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
+                        = $"{destroyedObject.GetComponent<PickItem>().item.name}∏¶ »πµÊ«œø¥Ω¿¥œ¥Ÿ!!";
+                    break;
+                }
+            }
             RayDestroy();
         }
     }

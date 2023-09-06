@@ -17,7 +17,7 @@ public class Hungry : MonoBehaviour
 
     public int HungryCount;
 
-    public float Maxtime = 120f;
+    public float Maxtime = 60f;
     public float curtime = 0f;
     // Start is called before the first frame update
     void Start()

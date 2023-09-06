@@ -43,7 +43,7 @@ public class SpawnManager : MonoBehaviour
         MushRoomprefabs = new GameObject[40];
         Init();
         GetObject(GameManager.instance.phase);
-        Player.Instance.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+        
     }
 
     void Update()
@@ -166,6 +166,8 @@ public class SpawnManager : MonoBehaviour
         {
             MushRoomSpawn();
         }
+
+        Player.Instance.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
     void ReturnObject()

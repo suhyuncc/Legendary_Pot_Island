@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
+    
     public Item[] item = new Item[3];
     public bool isCatched = false;
 
@@ -23,14 +25,17 @@ public class Fish : MonoBehaviour
 
             if(random < 3)
             {
-                item[0].count++;
+                FishingGame.instance.Fishindex = 1;
+                item[1].count++;
             }
             else if(random >= 3 && random < 9) 
             {
-                item[1].count++;
+                FishingGame.instance.Fishindex = 0;
+                item[0].count++;
             }
             else
             {
+                FishingGame.instance.Fishindex = 2;
                 item[2].count++;
             }
             isCatched = false;

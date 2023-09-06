@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PickItem : MonoBehaviour
 {
-    [SerializeField]
-    private Item item;
+    public Item item;
 
     public bool isPicked = false;
 

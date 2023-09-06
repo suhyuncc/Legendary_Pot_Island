@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,7 @@ public class CafeteriaPanel : MonoBehaviour
     private Item item;
 
     public bool feed;
+    public TextMeshProUGUI Cafeteria_text;
 
     private void OnEnable()
     {
@@ -36,6 +38,8 @@ public class CafeteriaPanel : MonoBehaviour
         item = thisItem;
 
         Alpha = new Color(Food.color.r, Food.color.g, Food.color.b, 0.3f);
+
+        Cafeteria_text.text = "π‰ ¡‡!!";
     }
 
     // Update is called once per frame
