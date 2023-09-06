@@ -25,8 +25,8 @@ public class Player : MonoBehaviour
     public float y;
 
     public Animator anim;
-    SpriteRenderer spriteRenderer;
-
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
     public GameObject destroyedObject;
     public GameObject gettingPool;
 
@@ -44,10 +44,10 @@ public class Player : MonoBehaviour
 
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isSwimming) 
         {
@@ -70,8 +70,9 @@ public class Player : MonoBehaviour
 
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
-        Vector3 moveVelocity = new Vector3(x, y, 0) * moveSpeed * Time.deltaTime;
-        transform.position += moveVelocity;
+        Vector3 moveVelocity = new Vector3(x, y, 0).normalized * moveSpeed * Time.fixedDeltaTime;
+        rb.MovePosition(transform.position + moveVelocity);
+        //transform.position += moveVelocity;
 
         if (x != 0)
         {
@@ -110,15 +111,15 @@ public class Player : MonoBehaviour
     {
         destroyedObject = collision.gameObject;
 
-        if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Tree"))
+/*        if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Tree"))
         {
             moveSpeed = 0;
-            
-        }
+            //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ 0ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½
+        }*/
 
         if (collision.gameObject.CompareTag("Item"))
         {
-            Debug.Log("¾ÆÀÌÅÛ È¹µæ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½");
             Destroy(destroyedObject);
         }
 
@@ -126,7 +127,7 @@ public class Player : MonoBehaviour
         {
             Boat.instance.boatSpeed = 0;
             isFishing = true;
-            Debug.Log("¾ÆÀÌÅÛ È¹µæ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½");
             fishing.SetActive(true);
         }
 
@@ -143,7 +144,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boundary") && isSwimming)
         {
-            moveSpeed = 10;
+            moveSpeed = prevMoveSpeed;
             Boat.instance.isBroading = false;
             isSwimming = false;
             this.transform.position += new Vector3(5 * x, 5 * y, 0);
@@ -151,7 +152,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Item"))
         {
-            Debug.Log("¾ÆÀÌÅÛ È¹µæ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½");
             destroyedObject = collision.gameObject;
             destroyedObject.GetComponent<PickItem>().isPicked = true;
             for (int i = 0; i < gettingPool.transform.childCount; i++)
@@ -160,7 +161,7 @@ public class Player : MonoBehaviour
                 {
                     gettingPool.transform.GetChild(i).gameObject.SetActive(true);
                     gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
-                        = $"{destroyedObject.GetComponent<PickItem>().item.name}¸¦ È¹µæÇÏ¿´½À´Ï´Ù!!";
+                        = $"{destroyedObject.GetComponent<PickItem>().item.name}ï¿½ï¿½ È¹ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!!";
                     break;
                 }
             }
@@ -169,7 +170,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Mush"))
         {
-            Debug.Log("¾ÆÀÌÅÛ È¹µæ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½");
             destroyedObject = collision.gameObject;
             destroyedObject.GetComponent<PickItem>().isPicked = true;
             for (int i = 0; i < gettingPool.transform.childCount; i++)
@@ -178,11 +179,26 @@ public class Player : MonoBehaviour
                 {
                     gettingPool.transform.GetChild(i).gameObject.SetActive(true);
                     gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
-                        = $"{destroyedObject.GetComponent<PickItem>().item.name}¸¦ È¹µæÇÏ¿´½À´Ï´Ù!!";
+                        = $"{destroyedObject.GetComponent<PickItem>().item.name}ï¿½ï¿½ È¹ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!!";
                     break;
                 }
             }
             RayDestroy();
+        }
+
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            space.gameObject.SetActive(true);
+            collision.gameObject.transform.GetChild(0).GetComponent<TreeShake>().isTreeArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            space.gameObject.SetActive(false);
+            collision.gameObject.transform.GetChild(0).GetComponent<TreeShake>().isTreeArea = false;
         }
     }
 

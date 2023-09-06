@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TreeShake : MonoBehaviour
 {
-
+    public static TreeShake instance;
     public GameObject[] leaf = new GameObject[3];
     public GameObject[] fruit = new GameObject[3];
 
@@ -15,9 +15,12 @@ public class TreeShake : MonoBehaviour
     [SerializeField] 
     private GameObject honey;
 
-    private bool isShaked = false;
+    public bool isShaked = false;
+    public bool isTreeArea;
     void Start()
     {
+        instance = this;
+        isTreeArea = false;
         playerObject = GameObject.FindWithTag("Player");
         for (int i = 0; i < 3; i++)
         {
@@ -33,23 +36,28 @@ public class TreeShake : MonoBehaviour
     }
     void Update()
     {
-        
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        //playerObject.GetComponent<Player>().space.gameObject.SetActive(true);
-        if(collision.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && !isShaked)
+        if (Input.GetKeyDown(KeyCode.Space) && !isShaked && isTreeArea)
         {
-            
+            Debug.Log("스페이스 누름");
             StartCoroutine(Shake());
             isShaked = true;
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        //playerObject.GetComponent<Player>().space.gameObject.SetActive(true);
+/*        if(collision.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && !isShaked)
+        {
+            
+            StartCoroutine(Shake());
+            isShaked = true;
+        }*/
+    }
 
 
-    IEnumerator Shake()
+
+    public IEnumerator Shake()
     {
         float time = 2f;
         float shakePower = 0.5f;
