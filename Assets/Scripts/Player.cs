@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         {
             this.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
             this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            //moveSpeed = prevMoveSpeed;
+            //moveSpeed = prevMoveSpeed; 
         }
 
         Move();
@@ -114,12 +114,11 @@ public class Player : MonoBehaviour
 /*        if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Tree"))
         {
             moveSpeed = 0;
-            //���� ������ �ӵ� 0�Ǵ� ����
         }*/
 
         if (collision.gameObject.CompareTag("Item"))
         {
-            Debug.Log("������ ȹ��");
+            Debug.Log("아이템을 얻었습니다!");
             Destroy(destroyedObject);
         }
 
@@ -127,7 +126,7 @@ public class Player : MonoBehaviour
         {
             Boat.instance.boatSpeed = 0;
             isFishing = true;
-            Debug.Log("������ ȹ��");
+            Debug.Log("물고기를 얻었습니다!");
             fishing.SetActive(true);
         }
 
@@ -152,7 +151,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Item"))
         {
-            Debug.Log("������ ȹ��");
+            Debug.Log("아이템에 trigger함");
             destroyedObject = collision.gameObject;
             destroyedObject.GetComponent<PickItem>().isPicked = true;
             for (int i = 0; i < gettingPool.transform.childCount; i++)
@@ -161,7 +160,7 @@ public class Player : MonoBehaviour
                 {
                     gettingPool.transform.GetChild(i).gameObject.SetActive(true);
                     gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
-                        = $"{destroyedObject.GetComponent<PickItem>().item.name}�� ȹ���Ͽ����ϴ�!!";
+                        = $"{destroyedObject.GetComponent<PickItem>().item.name}을 획득하였습니다!!";
                     break;
                 }
             }
@@ -170,7 +169,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Mush"))
         {
-            Debug.Log("������ ȹ��");
+            Debug.Log("버섯과 trigger함");
             destroyedObject = collision.gameObject;
             destroyedObject.GetComponent<PickItem>().isPicked = true;
             for (int i = 0; i < gettingPool.transform.childCount; i++)
@@ -179,7 +178,7 @@ public class Player : MonoBehaviour
                 {
                     gettingPool.transform.GetChild(i).gameObject.SetActive(true);
                     gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
-                        = $"{destroyedObject.GetComponent<PickItem>().item.name}�� ȹ���Ͽ����ϴ�!!";
+                        = $"{destroyedObject.GetComponent<PickItem>().item.name}을 획득하였습니다!!";
                     break;
                 }
             }

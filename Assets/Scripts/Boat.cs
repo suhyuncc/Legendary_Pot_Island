@@ -22,6 +22,7 @@ public class Boat : Player
     }
 
     // Update is called once per frame
+
     void FixedUpdate() //원래는 그냥 Update
     { 
         if(!isBroading)
@@ -75,6 +76,10 @@ public class Boat : Player
 
         transform.position += moveVelocity;
         playerObject.transform.position = transform.position;
+        //playerObject.GetComponent<Rigidbody2D>().MovePosition(transform.position);
+
+        /*        GetComponent<Rigidbody2D>().MovePosition(transform.position+ moveVelocity);
+                playerObject.transform.position = transform.position;*/
 
         if (x == 0 && y < 0)
         {
