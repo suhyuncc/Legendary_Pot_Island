@@ -38,7 +38,7 @@ public class TreeShake : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isShaked && isTreeArea)
         {
-            Debug.Log("½ºÆäÀÌ½º ´©¸§");
+            Debug.Log("ìŠ¤í˜ì´ìŠ¤ ëˆ„ë¦„");
             StartCoroutine(Shake());
             isShaked = true;
         }
@@ -87,7 +87,15 @@ public class TreeShake : MonoBehaviour
             time -= 0.1f;
             for (int i = 0; i < 3; i++)
             {
-                fruit[i].transform.position = new Vector3(fruit[i].transform.position.x, fruit[i].transform.position.y - 0.2f, 0);
+                if(i == 0)
+                {
+                    fruit[i].transform.position = new Vector3(fruit[i].transform.position.x, fruit[i].transform.position.y - 0.35f, 0);
+                }
+                else
+                {
+                    fruit[i].transform.position = new Vector3(fruit[i].transform.position.x, fruit[i].transform.position.y - 0.2f, 0);
+                }
+                
                 
             }
             

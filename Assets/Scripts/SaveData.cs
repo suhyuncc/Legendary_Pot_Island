@@ -8,4 +8,5 @@ public class SaveData : ScriptableObject
     public int PhaseNum;
     public int Days;
     public int HungryCount;
+    public bool isSaved;
 }

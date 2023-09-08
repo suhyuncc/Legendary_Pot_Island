@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e852f795e76334684f0a543468d1ca, type: 3}
   m_Name: Save Data
   m_EditorClassIdentifier: 
-  PhaseNum: 2
+  PhaseNum: 1
   Days: 2
-  HungryCount: 3
+  HungryCount: 0
+  isSaved: 1

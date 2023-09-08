@@ -23,7 +23,8 @@ public class Hungry : MonoBehaviour
     void Start()
     {
         instance = this;
-        HungryCount = 0;
+        HungryCount = save.HungryCount;
+        InitHungry(HungryCount);
     }
 
     // Update is called once per frame
@@ -50,7 +51,7 @@ public class Hungry : MonoBehaviour
         }
         else
         {
-            if (HungryCount % 2 == 0)
+            if (HungryCount % 2 == 0 || HungryCount == 0)
             {
                 images[HungryCount / 2].sprite = Sprites[1];
             }
@@ -89,4 +90,18 @@ public class Hungry : MonoBehaviour
 
     }
 
+    private void InitHungry(int hungrycount) 
+    {
+        for (int i = 0; i < HungryCount; i++)
+        {
+            if (i % 2 == 0 || i == 0)
+            {
+                images[i / 2].sprite = Sprites[1];
+            }
+            else
+            {
+                images[i / 2].gameObject.SetActive(false);
+            }
+        }
+    }
 }
