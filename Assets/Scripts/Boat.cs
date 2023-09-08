@@ -22,14 +22,13 @@ public class Boat : Player
     }
 
     // Update is called once per frame
-
-    void FixedUpdate() //¿ø·¡´Â ±×³É Update
-    { 
-        if(!isBroading)
+    private void Update()
+    {
+        if (!isBroading)
         {
             float distance = Vector3.Distance(transform.position, playerObject.transform.position);
 
-            if (distance < 5)
+            if (distance < 6)
             {
                 if (!isBroading)
                 {
@@ -40,32 +39,55 @@ public class Boat : Player
                 if (!isBroading && Input.GetKeyDown(KeyCode.Space))
                 {
                     isBroading = true;
+                    if (transform.position.y < -8.5f && -22f< transform.position.x && transform.position.x < 22f)
+                    {
+                        transform.position = new Vector3(transform.position.x, transform.position.y - 2.5f, 0);
+                    }
+
                     playerObject.transform.position = transform.position;
                     Player.Instance.isSwimming = true;
                     space.gameObject.gameObject.SetActive(false);
                     //text_shake.gameObject.SetActive(false);
+
+
+                    boatSpeed = 1f;
+
                     Invoke("Retrigger", 0.8f);
+                    StartCoroutine(BoatSpeedReset());
                 }
             }
             else
             {
                 space.gameObject.gameObject.SetActive(false);
-                //text_shake.gameObject.SetActive(false);
             }
         }
-        else
+    }
+
+    private void FixedUpdate() //ì›ëž˜ëŠ” ê·¸ëƒ¥ Update
+    { 
+        if(isBroading)
         {
             Move();
         }
         
     }
 
+    IEnumerator  BoatSpeedReset()
+    {
+        yield return new WaitForSeconds(0.5f);
+        boatSpeed = 2;
+        yield return new WaitForSeconds(0.5f);
+        boatSpeed = 4;
+        yield return new WaitForSeconds(0.5f);
+        boatSpeed = 6;
+    }
     void Retrigger()
     {
         for (int i = 0; i < boundarys.Length; i++)
         {
             boundarys[i].gameObject.gameObject.GetComponent<EdgeCollider2D>().isTrigger = true;
         }
+
     }
 
     public override void Move()

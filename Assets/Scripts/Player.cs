@@ -146,6 +146,7 @@ public class Player : MonoBehaviour
             moveSpeed = prevMoveSpeed;
             Boat.instance.isBroading = false;
             isSwimming = false;
+            Boat.instance.transform.position += new Vector3(-1.5f * x, -2f * y, 0);
             this.transform.position += new Vector3(5 * x, 5 * y, 0);
         }
 
