@@ -8,13 +8,13 @@ public class FishingGage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Area"))
         {
-            //Debug.Log("°ÔÀÓ ¼º°ø");
-            Player.Instance.destroyedObject.GetComponent<Fish>().isCatched = true;
+            //Debug.Log("ê²Œìž„ ì„±ê³µ");
+            Boat.instance.destroyedObject.GetComponent<Fish>().isCatched = true;
         }
         else
         {
-            //Debug.Log("°ÔÀÓ ½ÇÆÐ");
-            Player.Instance.destroyedObject.GetComponent<Fish>().isCatched = false;
+            //Debug.Log("ê²Œìž„ ì‹¤íŒ¨");
+            Boat.instance.destroyedObject.GetComponent<Fish>().isCatched = false;
         }
     }
 }

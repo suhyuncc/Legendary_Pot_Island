@@ -509,6 +509,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EndingPanel: {fileID: 1937830830}
+  Save_data: {fileID: 11400000, guid: e0fe4bdb578f5384788d7f451dce2678, type: 2}
+  items:
+  - {fileID: 11400000, guid: 6ce5217f6f2b6e346b54918e7f39050c, type: 2}
+  - {fileID: 11400000, guid: 05695d6e7e2b7954285fabee811c760d, type: 2}
+  - {fileID: 11400000, guid: fe09fb2e56a062c4cbf63302497d7ab0, type: 2}
+  - {fileID: 11400000, guid: c96774118f350c64c97755216bd2efd8, type: 2}
+  - {fileID: 11400000, guid: 08ea50e4442bb3341903c4c1f96fb711, type: 2}
+  - {fileID: 11400000, guid: 593cf63b031b91044b54bfd25c6a168f, type: 2}
+  - {fileID: 11400000, guid: 974a087cd63832a4096313677914abea, type: 2}
+  - {fileID: 11400000, guid: 9676bcadb7a2c0c4a9a3a5f973b5c55b, type: 2}
+  - {fileID: 11400000, guid: a13d400e4c3e47643b52124ec81a271b, type: 2}
+  - {fileID: 11400000, guid: 69a1db5b6e714b246b276ef66599f1b2, type: 2}
+  - {fileID: 11400000, guid: 892e3bf85fe52c64ca7c53b78a075dc6, type: 2}
+  - {fileID: 11400000, guid: ce5e414c9a306e64bb804686aadebb64, type: 2}
+  - {fileID: 11400000, guid: e0a872a97b5d29c48b897cc040d3fa1e, type: 2}
+  - {fileID: 11400000, guid: 99c6bfe344fa3ff49ac5dda17a5a8750, type: 2}
+  - {fileID: 11400000, guid: 374b1e35f59a6884ba26818099a057fc, type: 2}
+  - {fileID: 11400000, guid: 2e91730f21605584280be0067bdd061e, type: 2}
+  - {fileID: 11400000, guid: 30f571ca2cdb41c409d4f05ac08b46dc, type: 2}
+  - {fileID: 11400000, guid: f514cf610a016d7409e50c01a38e842c, type: 2}
+  - {fileID: 11400000, guid: 63ea936632c92344185d89f6914b1409, type: 2}
+  - {fileID: 11400000, guid: d5ac372ff50fe1e4f8cae540a79c6360, type: 2}
+  - {fileID: 11400000, guid: 2300f40614b20c24e843de3f7d90356a, type: 2}
+  - {fileID: 11400000, guid: 89f43e7571a51fa419d24044bc8cbc6b, type: 2}
+  - {fileID: 11400000, guid: cd4727e124c08634a98d094f22f55501, type: 2}
+  - {fileID: 11400000, guid: 8cad873d34dee8b4d81d4ffe97c6797e, type: 2}
+  - {fileID: 11400000, guid: eb0d1b62c53385c448d574043fc1aa80, type: 2}
+  - {fileID: 11400000, guid: bdc35fe964ab1bd4d9a0b040cef05c97, type: 2}
+  - {fileID: 11400000, guid: 2cfd31d39a9085949870185ab9e3db90, type: 2}
+  - {fileID: 11400000, guid: e21c812ff6066d1409b17abb96414598, type: 2}
+  - {fileID: 11400000, guid: a43e38f7fe5f40f468d9c7034b0b2ee7, type: 2}
+  - {fileID: 11400000, guid: 782d088a57f167f4fb4050db975b84da, type: 2}
+  - {fileID: 11400000, guid: aa959f8a8de181f458db4c8f946d22af, type: 2}
+  - {fileID: 11400000, guid: 0a9e59743f37b1840bd76e50cd915ef6, type: 2}
+  - {fileID: 11400000, guid: 68ee8c65aa4ba3a41bac1df9b17954c2, type: 2}
+  - {fileID: 11400000, guid: 369c2303d3601c9448f26808deb8401a, type: 2}
+  - {fileID: 11400000, guid: 05a43bf7eb280c94883abd5e87a8c6fa, type: 2}
+  - {fileID: 11400000, guid: 4a8942fc485bc3a48bb9154f045a751a, type: 2}
 --- !u!4 &665533491
 Transform:
   m_ObjectHideFlags: 0
@@ -1281,7 +1319,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1937830832}
-  - component: {fileID: 1937830831}
   m_Layer: 5
   m_Name: EndingPanel
   m_TagString: Untagged
@@ -1289,18 +1326,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1937830831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937830830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 223e6adaaf1461e4e82c23a031289221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1937830832
 RectTransform:
   m_ObjectHideFlags: 0

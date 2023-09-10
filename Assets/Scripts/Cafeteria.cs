@@ -41,14 +41,14 @@ public class Cafeteria : MonoBehaviour
         if (distance < 11)
         {
 
-            if (!isFeeding)
+            if (!isFeeding && !Player.Instance.isSwimming)
             {
                 spaceFeed.gameObject.SetActive(true);
             }
 
-            if (!isFeeding && Input.GetKeyDown(KeyCode.Space))
+            if (!isFeeding && Input.GetKeyDown(KeyCode.Space) && !Player.Instance.isSwimming)
             {
-                // ÄíÅ· ½ÃÀÛ!
+                // ì¿ í‚¹ ì‹œìž‘!
 
                 isFeeding = true;
                 CafeteriaPanel.SetActive(true);
@@ -64,10 +64,11 @@ public class Cafeteria : MonoBehaviour
 
     IEnumerator EatingMotion()
     {
-        Debug.Log("¸ð¼Ç ÇÔ¼ö ½ÇÇà");
+        Debug.Log("ëª¨ì…˜ í•¨ìˆ˜ ì‹¤í–‰");
         Player.Instance.moveSpeed = 0;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = EatingSprites[GameManager.instance.phase-1];
-
+        GameManager.instance.audio.clip = GameManager.instance.clips[3];
+        GameManager.instance.audio.Play();
         yield return new WaitForSeconds(1f);
 
         this.gameObject.GetComponent<SpriteRenderer>().sprite = EndEatingSprites[GameManager.instance.phase-1];
@@ -90,16 +91,13 @@ public class Cafeteria : MonoBehaviour
     }
     public void Feeding()
     {
-        Debug.Log("Feeding ÇÔ¼ö ½ÇÇà");
         CafeteriaPanel.SetActive(false);
         StartCoroutine(EatingMotion());
-        //CafeteriaPanel.SetActive(true);
         
     }
 
     public void UpgradePhase()
     {
         GameManager.instance.phase++;
-        Debug.Log("¾÷±×·¹ÀÌµåµÊ");
     }
 }

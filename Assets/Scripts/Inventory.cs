@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
     private GameObject SelectItem;
 
     private int selectedCount = 0;
-    //Inventory ¹ÛÀ¸·Î »©¾ßÇÔ
+    //Inventory ë°–ìœ¼ë¡œ ë¹¼ì•¼í•¨
     
     private Color orign;
 
@@ -29,11 +29,11 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
     {
         item = ItemManager.Instance.ItemList.Find(x => x.name == image.sprite.name);
         //item.count = item.count + 10;
-        //Å×½ºÆ® ÇÏ·Á°í °³¼ö ´Ã¸®´Â ÄÚµå~
+        //í…ŒìŠ¤íŠ¸ í•˜ë ¤ê³  ê°œìˆ˜ ëŠ˜ë¦¬ëŠ” ì½”ë“œ~
 
         if (item == null)
         {
-            Debug.Log("¿À·ù¹ß»ı");
+            Debug.Log("ì˜¤ë¥˜ë°œìƒ");
             Debug.Log(image.sprite.name);
         }
 
@@ -67,7 +67,8 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
+        GameManager.instance.audio.clip = GameManager.instance.clips[2];
+        GameManager.instance.audio.Play();
         ClickItem();
     }
     void ClickItem()
@@ -76,7 +77,7 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
         {
             if(item.count != 0)
             {
-                Debug.Log(item.name + "¸¦ ¼±ÅÃÇß´Ù. " + item.health + " "+item.description);
+                Debug.Log(item.name + "ë¥¼ ì„ íƒí–ˆë‹¤. " + item.health + " "+item.description);
                 GameManager.instance.ItemPanel.SetActive(true);
                 GameManager.instance.ItemTitle.text = $"{item.Name}";
                 GameManager.instance.ItemDescription.text = $"{item.description}";
@@ -86,7 +87,7 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
 
                 GameManager.instance.eatenItem = item;
             }
-            //±× ¿ÜÀÇ °æ¿ì¿¡ ÀÎº¥Åä¸®¸¦ ¿­¾î¼­ ¾ÆÀÌÅÛÀ» Å¬¸¯ÇßÀ» °æ¿ì
+            //ê·¸ ì™¸ì˜ ê²½ìš°ì— ì¸ë²¤í† ë¦¬ë¥¼ ì—´ì–´ì„œ ì•„ì´í…œì„ í´ë¦­í–ˆì„ ê²½ìš°
             
         }
 
@@ -96,100 +97,100 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
             SelectItem.GetComponent<Cooking>().SelectedItem = item;
             SelectItem.GetComponent<Cooking>().isClick = true;
 
-            /*if (item.name == "°íµî¾î")
+            /*if (item.name == "ê³ ë“±ì–´")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 0;
                 SelectItem.GetComponent<Cooking>().isClick = true;
 
-                Debug.Log("°íµî¾î¿¹¿ä");
+                Debug.Log("ê³ ë“±ì–´ì˜ˆìš”");
             }
-            else if (item.name == "²Ü")
+            else if (item.name == "ê¿€")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 14;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("²Ü");
+                Debug.Log("ê¿€");
             }
-            else if (item.name == "µş±â")
+            else if (item.name == "ë”¸ê¸°")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 5;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("µş±â");
+                Debug.Log("ë”¸ê¸°");
             }
-            else if (item.name == "·¹¸ó")
+            else if (item.name == "ë ˆëª¬")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 6;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("·¹¸ó");
+                Debug.Log("ë ˆëª¬");
             }
-            else if (item.name == "¸ñÀÌ¹ö¼¸")
+            else if (item.name == "ëª©ì´ë²„ì„¯")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 10;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("¸ñÀÌ¹ö¼¸");
+                Debug.Log("ëª©ì´ë²„ì„¯");
             }
-            else if (item.name == "¹Ğ")
+            else if (item.name == "ë°€")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 12;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("¹Ğ");
+                Debug.Log("ë°€");
             }
-            else if (item.name == "º¹¼ş¾Æ")
+            else if (item.name == "ë³µìˆ­ì•„")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 4;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("º¹¼ş¾Æ");
+                Debug.Log("ë³µìˆ­ì•„");
             }
-            else if (item.name == "»ç°ú")
+            else if (item.name == "ì‚¬ê³¼")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 3;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("»ç°ú");
+                Debug.Log("ì‚¬ê³¼");
             }
-            else if (item.name == "»õ¼ÛÀÌ ¹ö¼¸")
+            else if (item.name == "ìƒˆì†¡ì´ ë²„ì„¯")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 9;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("»õ¼ÛÀÌ ¹ö¼¸");
+                Debug.Log("ìƒˆì†¡ì´ ë²„ì„¯");
             }
-            else if (item.name == "¼Ò±İ")
+            else if (item.name == "ì†Œê¸ˆ")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 13;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("¼Ò±İÀÌ¹ÌÁö°¡ ¾ø´Ù..");
+                Debug.Log("ì†Œê¸ˆì´ë¯¸ì§€ê°€ ì—†ë‹¤..");
             }
-            else if (item.name == "¼ö¹Ú")
+            else if (item.name == "ìˆ˜ë°•")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 7;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("¼ö¹Ú");
+                Debug.Log("ìˆ˜ë°•");
             }
-            else if (item.name == "½Ò")
+            else if (item.name == "ìŒ€")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 11;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("½Ò");
+                Debug.Log("ìŒ€");
             }
-            else if (item.name == "¾ç¼ÛÀÌ ¹ö¼¸")
+            else if (item.name == "ì–‘ì†¡ì´ ë²„ì„¯")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 8;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("¾ç¼ÛÀÌ ¹ö¼¸");
+                Debug.Log("ì–‘ì†¡ì´ ë²„ì„¯");
             }
-            else if (item.name == "¿¬¾î")
+            else if (item.name == "ì—°ì–´")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 1;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("¿¬¾î");
+                Debug.Log("ì—°ì–´");
             }
-            else if (item.name == "ÂüÄ¡")
+            else if (item.name == "ì°¸ì¹˜")
             {
                 SelectItem.GetComponent<Cooking>().ImageNum = 2;
                 SelectItem.GetComponent<Cooking>().isClick = true;
-                Debug.Log("ÂüÄ¡");
+                Debug.Log("ì°¸ì¹˜");
             }
             else
             {
-                Debug.Log("item.name Àß¸øµÊ");
+                Debug.Log("item.name ì˜ëª»ë¨");
             }*/
 
         }
@@ -197,61 +198,61 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
         if (item.count != 0&&Cafeteria.instance.isFeeding == true)
         {
             
-            if (item.name == "¼ö¹Ú ÂüÄ¡ ÃÊ¹ä")
+            if (item.name == "ìˆ˜ë°• ì°¸ì¹˜ ì´ˆë°¥")
             {
                 if (GameManager.instance.phase == 4)
                 {
                     item.count--;
-                    CafeteriaPanel.instance.Cafeteria_text.text = "ÀÌ°Å¾ß!";
+                    CafeteriaPanel.instance.Cafeteria_text.text = "ì´ê±°ì•¼!";
                     CafeteriaPanel.instance.feed = true;
                 }
                 else
                 {
-                    CafeteriaPanel.instance.Cafeteria_text.text = "±×°Ô ¾Æ´Ï¾ß!";
+                    CafeteriaPanel.instance.Cafeteria_text.text = "ê·¸ê²Œ ì•„ë‹ˆì•¼!";
                 }
             } 
-            else if (item.name == "ÂüÄ¡ÆÄÀÌ")
+            else if (item.name == "ì°¸ì¹˜íŒŒì´")
             {
                 if (GameManager.instance.phase == 2)
                 {
                     item.count--;
-                    CafeteriaPanel.instance.Cafeteria_text.text = "ÀÌ°Å¾ß!";
+                    CafeteriaPanel.instance.Cafeteria_text.text = "ì´ê±°ì•¼!";
                     CafeteriaPanel.instance.feed = true;
                 }
                 else
                 {
-                    CafeteriaPanel.instance.Cafeteria_text.text = "±×°Ô ¾Æ´Ï¾ß!";
+                    CafeteriaPanel.instance.Cafeteria_text.text = "ê·¸ê²Œ ì•„ë‹ˆì•¼!";
                 }
             }
-            else if (item.name == "¹°°í±â ÇÑ»ó")
+            else if (item.name == "ë¬¼ê³ ê¸° í•œìƒ")
             {
                 if(GameManager.instance.phase == 1)
                 {
                     item.count--;
-                    CafeteriaPanel.instance.Cafeteria_text.text = "ÀÌ°Å¾ß!";
+                    CafeteriaPanel.instance.Cafeteria_text.text = "ì´ê±°ì•¼!";
                     CafeteriaPanel.instance.feed = true;
                 }
                 else
                 {
-                    CafeteriaPanel.instance.Cafeteria_text.text = "±×°Ô ¾Æ´Ï¾ß!";
+                    CafeteriaPanel.instance.Cafeteria_text.text = "ê·¸ê²Œ ì•„ë‹ˆì•¼!";
                 }
             }
-            else if (item.name == "¹ö¼¸ ¼öÇÁ")
+            else if (item.name == "ë²„ì„¯ ìˆ˜í”„")
             {
                 if (GameManager.instance.phase == 3)
                 {
                     item.count--;
-                    CafeteriaPanel.instance.Cafeteria_text.text = "ÀÌ°Å¾ß!";
+                    CafeteriaPanel.instance.Cafeteria_text.text = "ì´ê±°ì•¼!";
                     CafeteriaPanel.instance.feed = true;
                 }
                 else
                 {
-                    CafeteriaPanel.instance.Cafeteria_text.text = "±×°Ô ¾Æ´Ï¾ß!";
+                    CafeteriaPanel.instance.Cafeteria_text.text = "ê·¸ê²Œ ì•„ë‹ˆì•¼!";
                 }
             }
             else
             {
-                CafeteriaPanel.instance.Cafeteria_text.text = "±×°Ô ¾Æ´Ï¾ß!";
+                CafeteriaPanel.instance.Cafeteria_text.text = "ê·¸ê²Œ ì•„ë‹ˆì•¼!";
             }
 
             

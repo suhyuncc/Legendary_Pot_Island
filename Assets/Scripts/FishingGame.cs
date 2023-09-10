@@ -46,8 +46,8 @@ public class FishingGame : MonoBehaviour
     private void OnDisable()
     {
         Boat.instance.boatSpeed = 6;
-        Player.Instance.RayDestroy();
-        Player.Instance.isFishing = false;
+        Boat.instance.RayDestroy();
+        Boat.instance.isFishing = false;
         FishGet(Fishindex);
     }
 
@@ -92,7 +92,7 @@ public class FishingGame : MonoBehaviour
                     {
                         gettingPool.transform.GetChild(i).gameObject.SetActive(true);
                         gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
-                            = "°íµî¾î¸¦ È¹µæÇÏ¿´½À´Ï´Ù!!";
+                            = "ê³ ë“±ì–´ë¥¼ íšë“í•˜ì˜€ìŠµë‹ˆë‹¤!!";
                         break;
                     }
                 }
@@ -104,7 +104,7 @@ public class FishingGame : MonoBehaviour
                     {
                         gettingPool.transform.GetChild(i).gameObject.SetActive(true);
                         gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
-                            = "¿¬¾î¸¦ È¹µæÇÏ¿´½À´Ï´Ù!!";
+                            = "ì—°ì–´ë¥¼ íšë“í•˜ì˜€ìŠµë‹ˆë‹¤!!";
                         break;
                     }
                 }
@@ -116,7 +116,7 @@ public class FishingGame : MonoBehaviour
                     {
                         gettingPool.transform.GetChild(i).gameObject.SetActive(true);
                         gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
-                            = "ÂüÄ¡¸¦ È¹µæÇÏ¿´½À´Ï´Ù!!";
+                            = "ì°¸ì¹˜ë¥¼ íšë“í•˜ì˜€ìŠµë‹ˆë‹¤!!";
                         break;
                     }
                 }
@@ -128,7 +128,7 @@ public class FishingGame : MonoBehaviour
                     {
                         gettingPool.transform.GetChild(i).gameObject.SetActive(true);
                         gettingPool.transform.GetChild(i).gameObject.GetComponent<TextMeshProUGUI>().text
-                            = "³õÃÆ´Ù!!";
+                            = "ë†“ì³¤ë‹¤!!";
                         break;
                     }
                 }

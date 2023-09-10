@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class TreeShake : MonoBehaviour
 {
     public static TreeShake instance;
@@ -14,11 +15,16 @@ public class TreeShake : MonoBehaviour
 
     [SerializeField] 
     private GameObject honey;
+    [SerializeField]
+    private AudioClip[] clips;
+
+    private AudioSource audio;
 
     public bool isShaked = false;
     public bool isTreeArea;
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         instance = this;
         isTreeArea = false;
         playerObject = GameObject.FindWithTag("Player");
@@ -38,11 +44,27 @@ public class TreeShake : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isShaked && isTreeArea)
         {
-            Debug.Log("스페이스 누름");
+            audio.clip= clips[0];
+            audio.Play();
             StartCoroutine(Shake());
             isShaked = true;
+            Player.Instance.space.gameObject.SetActive(false);
         }
     }
+
+    /*
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("TreeBound"))
+        {
+            Debug.Log(name);
+            float xPos = Random.Range(75, 96);
+            float yPos = Random.Range(26, 43);
+            this.gameObject.SetActive(true);
+            this.gameObject.transform.position = new Vector3(xPos, yPos, 0);
+        }
+    }
+    */
 
     private void OnCollisionStay2D(Collision2D collision)
     {

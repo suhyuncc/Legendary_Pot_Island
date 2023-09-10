@@ -21,17 +21,17 @@ public class Fish : MonoBehaviour
     {
         if (isCatched)
         {
-            int random= Random.Range(0, 9);
+            int random= Random.Range(0, 20);
 
-            if(random < 3)
-            {
-                FishingGame.instance.Fishindex = 1;
-                item[1].count++;
-            }
-            else if(random >= 3 && random < 9) 
+            if(random < 11)
             {
                 FishingGame.instance.Fishindex = 0;
                 item[0].count++;
+            }
+            else if(random >= 11 && random < 18) 
+            {
+                FishingGame.instance.Fishindex = 1;
+                item[1].count++;
             }
             else
             {

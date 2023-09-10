@@ -9,14 +9,13 @@ public class Player : MonoBehaviour
     public static Player Instance;
 
     [SerializeField]
-    private GameObject fishing;
-    [SerializeField]
     private GameObject BrokenPanel;
+    [SerializeField]
+    private AudioClip[] clips;
 
     public TextMeshProUGUI text_shake;
     public Image space;
 
-    public bool isFishing;
     public bool isSwimming;
     public float moveSpeed;
     public float boatSpeed;
@@ -27,6 +26,7 @@ public class Player : MonoBehaviour
     public Animator anim;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
+    public AudioSource audio;
     public GameObject destroyedObject;
     public GameObject gettingPool;
 
@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        isFishing = false;
         isSwimming = false;
         prevMoveSpeed = moveSpeed;
 
@@ -52,20 +51,23 @@ public class Player : MonoBehaviour
         if (isSwimming) 
         {
             this.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-            this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
             moveSpeed = 0;
         }
         else
         {
             this.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
-            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            //moveSpeed = prevMoveSpeed; 
         }
 
         Move();
+
+        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
+            Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            
+        }
     }
 
-    public virtual void Move()
+    public void Move()
     {
 
         x = Input.GetAxisRaw("Horizontal");
@@ -105,29 +107,25 @@ public class Player : MonoBehaviour
             anim.speed = 1.0f;
         }
 
+        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         destroyedObject = collision.gameObject;
 
-/*        if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Tree"))
+        if (!collision.gameObject.CompareTag("Boundary") && !collision.gameObject.CompareTag("Pot")
+            && !collision.gameObject.CompareTag("Tree"))
         {
+            Debug.Log("아이템!");
             moveSpeed = 0;
-        }*/
+        }
 
         if (collision.gameObject.CompareTag("Item"))
         {
             Debug.Log("아이템을 얻었습니다!");
             Destroy(destroyedObject);
-        }
-
-        if (collision.gameObject.CompareTag("Fish"))
-        {
-            Boat.instance.boatSpeed = 0;
-            isFishing = true;
-            Debug.Log("물고기를 얻었습니다!");
-            fishing.SetActive(true);
         }
 
         if (collision.gameObject.CompareTag("Ship"))
@@ -166,6 +164,8 @@ public class Player : MonoBehaviour
                 }
             }
             Destroy(destroyedObject);
+            audio.clip = clips[0];
+            audio.Play();
         }
 
         if (collision.gameObject.CompareTag("Mush"))
@@ -186,10 +186,12 @@ public class Player : MonoBehaviour
             RayDestroy();
         }
 
-        if (collision.gameObject.CompareTag("Tree"))
+        if (collision.gameObject.CompareTag("Tree") && 
+            !collision.gameObject.transform.GetComponent<TreeShake>().isShaked)
         {
+            Debug.Log(name);
             space.gameObject.SetActive(true);
-            collision.gameObject.transform.GetChild(0).GetComponent<TreeShake>().isTreeArea = true;
+            collision.gameObject.transform.GetComponent<TreeShake>().isTreeArea = true;
         }
     }
 
@@ -198,12 +200,14 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Tree"))
         {
             space.gameObject.SetActive(false);
-            collision.gameObject.transform.GetChild(0).GetComponent<TreeShake>().isTreeArea = false;
+            collision.gameObject.transform.GetComponent<TreeShake>().isTreeArea = false;
         }
     }
 
     public void RayDestroy()
     {
         destroyedObject.gameObject.SetActive(false);
+        audio.clip = clips[0];
+        audio.Play();
     }
 }

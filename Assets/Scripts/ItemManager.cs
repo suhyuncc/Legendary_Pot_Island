@@ -6,6 +6,7 @@ public class ItemManager : MonoBehaviour
 {
     public static ItemManager Instance;
 
+    public SaveData save;
     public List<Item> ItemList = new List<Item>();
 
     

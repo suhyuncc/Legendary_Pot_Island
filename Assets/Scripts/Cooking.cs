@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+
 public class Cooking : MonoBehaviour
 {
     [SerializeField]
     private Image[] images;
     [SerializeField]
     private Sprite[] sprites;
-    [SerializeField]
-    //private Item[] Cookeditem = new Item[23];
 
     public int ImageNum;
     public bool isClick;
@@ -54,11 +53,30 @@ public class Cooking : MonoBehaviour
         }
     }
 
+    public void CancelBtn()
+    {
+        CookingPot.instance.CookingPanel.SetActive(false);
+
+        SelectList.Clear();
+
+        for (int i = 0; i < images.Length; i++)
+        {
+            if (images[i].gameObject.activeSelf)
+            {
+                Cooked = ItemManager.Instance.ItemList.Find(x => x.name == images[i].sprite.name);
+                Cooked.count++;
+            }
+            images[i].gameObject.SetActive(false);
+        }
+
+        
+        
+    }
+
     public void CookingBtn()
     {
         Player.Instance.moveSpeed = 10;
 
-        Debug.Log("ÄíÅ·¹öÆ° ´©¸§");
         for (int i = 0; i < images.Length; i++)
         {
             if (images[i].gameObject.activeSelf == true)
@@ -67,128 +85,126 @@ public class Cooking : MonoBehaviour
             }
         }
 
-        //¾ÆÀÌÅÛ ¾ò´Â°Ç count++·Î ¾ò±â
+        //ì•„ì´í…œ ì–»ëŠ”ê±´ count++ë¡œ ì–»ê¸°
 
-        if (SelectList.Contains("½Ò") && SelectList.Contains("¼Ò±Ý") && SelectList.Contains("¼ö¹Ú") && SelectList.Contains("ÂüÄ¡"))
+        if (SelectList.Contains("ìŒ€") && SelectList.Contains("ì†Œê¸ˆ") && SelectList.Contains("ìˆ˜ë°•") && SelectList.Contains("ì°¸ì¹˜"))
         {
-            Cooked = Cookeditem("¼ö¹Ú ÂüÄ¡ ÃÊ¹ä");
+            Cooked = Cookeditem("ìˆ˜ë°• ì°¸ì¹˜ ì´ˆë°¥");
         }
-        else if (SelectList.Contains("½Ò") && SelectList.Contains("¼Ò±Ý") && SelectList.Contains("¾ç¼ÛÀÌ ¹ö¼¸") && SelectList.Contains("»õ¼ÛÀÌ ¹ö¼¸") && SelectList.Contains("¸ñÀÌ ¹ö¼¸"))
+        else if (SelectList.Contains("ìŒ€") && SelectList.Contains("ì†Œê¸ˆ") && SelectList.Contains("ì–‘ì†¡ì´ ë²„ì„¯") && SelectList.Contains("ìƒˆì†¡ì´ ë²„ì„¯") && SelectList.Contains("ëª©ì´ ë²„ì„¯"))
         {
-            Cooked = Cookeditem("¹ö¼¸ ¼öÇÁ");
+            Cooked = Cookeditem("ë²„ì„¯ ìˆ˜í”„");
         }
-        else if (SelectList.Contains("¹Ð") && SelectList.Contains("¼Ò±Ý") && SelectList.Contains("ÂüÄ¡"))
+        else if (SelectList.Contains("ë°€") && SelectList.Contains("ì†Œê¸ˆ") && SelectList.Contains("ì°¸ì¹˜"))
         {
-            Cooked = Cookeditem("ÂüÄ¡ÆÄÀÌ");
+            Cooked = Cookeditem("ì°¸ì¹˜íŒŒì´");
         }
-        else if (SelectList.Contains("°íµî¾î") && SelectList.Contains("¿¬¾î") && SelectList.Contains("ÂüÄ¡"))
+        else if (SelectList.Contains("ê³ ë“±ì–´") && SelectList.Contains("ì—°ì–´") && SelectList.Contains("ì°¸ì¹˜"))
         {
-            Cooked = Cookeditem("¹°°í±â ÇÑ»ó");
+            Cooked = Cookeditem("ë¬¼ê³ ê¸° í•œìƒ");
         }
-        else if(SelectList.Contains("²Ü")&&SelectList.Contains("»ç°ú") && (SelectList.Contains("·¹¸ó")|| SelectList.Contains("º¹¼þ¾Æ")|| SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú")))
+        else if(SelectList.Contains("ê¿€")&&SelectList.Contains("ì‚¬ê³¼") && (SelectList.Contains("ë ˆëª¬")|| SelectList.Contains("ë³µìˆ­ì•„")|| SelectList.Contains("ë”¸ê¸°") || SelectList.Contains("ìˆ˜ë°•")))
         {
-            Cooked = Cookeditem("°úÀÏ Á¶¸²");
-        }else if (SelectList.Contains("²Ü") && SelectList.Contains("·¹¸ó") && (SelectList.Contains("º¹¼þ¾Æ") || SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú")))
+            Cooked = Cookeditem("ê³¼ì¼ ì¡°ë¦¼");
+        }else if (SelectList.Contains("ê¿€") && SelectList.Contains("ë ˆëª¬") && (SelectList.Contains("ë³µìˆ­ì•„") || SelectList.Contains("ë”¸ê¸°") || SelectList.Contains("ìˆ˜ë°•")))
         {
-                Cooked = Cookeditem("°úÀÏ Á¶¸²");
+                Cooked = Cookeditem("ê³¼ì¼ ì¡°ë¦¼");
         }
-        else if (SelectList.Contains("²Ü") && SelectList.Contains("º¹¼þ¾Æ") && (SelectList.Contains("µþ±â") || SelectList.Contains("¼ö¹Ú")))
+        else if (SelectList.Contains("ê¿€") && SelectList.Contains("ë³µìˆ­ì•„") && (SelectList.Contains("ë”¸ê¸°") || SelectList.Contains("ìˆ˜ë°•")))
         {
-                Cooked = Cookeditem("°úÀÏ Á¶¸²");
+                Cooked = Cookeditem("ê³¼ì¼ ì¡°ë¦¼");
         }
-        else if (SelectList.Contains("²Ü") && SelectList.Contains("µþ±â") && SelectList.Contains("¼ö¹Ú"))
+        else if (SelectList.Contains("ê¿€") && SelectList.Contains("ë”¸ê¸°") && SelectList.Contains("ìˆ˜ë°•"))
         {
-                Cooked = Cookeditem("°úÀÏ Á¶¸²");
+                Cooked = Cookeditem("ê³¼ì¼ ì¡°ë¦¼");
         }
-        else if (SelectList.Contains("¾ç¼ÛÀÌ ¹ö¼¸") && SelectList.Contains("»õ¼ÛÀÌ ¹ö¼¸") && SelectList.Contains("¸ñÀÌ ¹ö¼¸"))
+        else if (SelectList.Contains("ì–‘ì†¡ì´ ë²„ì„¯") && SelectList.Contains("ìƒˆì†¡ì´ ë²„ì„¯") && SelectList.Contains("ëª©ì´ ë²„ì„¯"))
         {
-            Cooked = Cookeditem("¹ö¼¸ Àü°ñ");
+            Cooked = Cookeditem("ë²„ì„¯ ì „ê³¨");
         }
-        else if (SelectList.Contains("°íµî¾î")&& SelectList.Contains("½Ò"))
+        else if (SelectList.Contains("ê³ ë“±ì–´")&& SelectList.Contains("ìŒ€"))
         {
-            Cooked = Cookeditem("°íµî¾î ÃÊ¹ä");
+            Cooked = Cookeditem("ê³ ë“±ì–´ ì´ˆë°¥");
         }
-        else if (SelectList.Contains("¿¬¾î")&& SelectList.Contains("½Ò"))
+        else if (SelectList.Contains("ì—°ì–´")&& SelectList.Contains("ìŒ€"))
         {
-            Cooked = Cookeditem("¿¬¾îÃÊ¹ä");
+            Cooked = Cookeditem("ì—°ì–´ì´ˆë°¥");
         }
-        else if (SelectList.Contains("ÂüÄ¡")&& SelectList.Contains("½Ò"))
+        else if (SelectList.Contains("ì°¸ì¹˜")&& SelectList.Contains("ìŒ€"))
         {
-            Cooked = Cookeditem("ÂüÄ¡ ÃÊ¹ä");
+            Cooked = Cookeditem("ì°¸ì¹˜ ì´ˆë°¥");
         }
-        else if (SelectList.Contains("°íµî¾î") && SelectList.Contains("¼Ò±Ý"))
+        else if (SelectList.Contains("ê³ ë“±ì–´") && SelectList.Contains("ì†Œê¸ˆ"))
         {
-            Cooked = Cookeditem("¼Ò±Ý °íµî¾î ±¸ÀÌ");
+            Cooked = Cookeditem("ì†Œê¸ˆ ê³ ë“±ì–´ êµ¬ì´");
         }
-        else if (SelectList.Contains("¿¬¾î") && SelectList.Contains("¼Ò±Ý"))
+        else if (SelectList.Contains("ì—°ì–´") && SelectList.Contains("ì†Œê¸ˆ"))
         {
-            Cooked = Cookeditem("¼Ò±Ý ¿¬¾î±¸ÀÌ");
+            Cooked = Cookeditem("ì†Œê¸ˆ ì—°ì–´êµ¬ì´");
         }
-        else if (SelectList.Contains("ÂüÄ¡") && SelectList.Contains("¼Ò±Ý"))
+        else if (SelectList.Contains("ì°¸ì¹˜") && SelectList.Contains("ì†Œê¸ˆ"))
         {
-            Cooked = Cookeditem("¼Ò±Ý ÂüÄ¡±¸ÀÌ");
+            Cooked = Cookeditem("ì†Œê¸ˆ ì°¸ì¹˜êµ¬ì´");
         }
-        else if (SelectList.Contains("¹Ð") && SelectList.Contains("¼Ò±Ý"))
+        else if (SelectList.Contains("ë°€") && SelectList.Contains("ì†Œê¸ˆ"))
         {
-            Cooked = Cookeditem("»§");
+            Cooked = Cookeditem("ë¹µ");
         }
-        else if (SelectList.Contains("°íµî¾î"))
+        else if (SelectList.Contains("ê³ ë“±ì–´"))
         {
-            Cooked = Cookeditem("°íµî¾î±¸ÀÌ"); //¶ç¾î¾²±â ÁÖÀÇ;
-            Debug.Log("°íµî¾î±¸ÀÌ");
+            Cooked = Cookeditem("ê³ ë“±ì–´êµ¬ì´"); //ë„ì–´ì“°ê¸° ì£¼ì˜;
         }
-        else if (SelectList.Contains("¿¬¾î"))
+        else if (SelectList.Contains("ì—°ì–´"))
         {
-            Cooked = Cookeditem("¿¬¾î±¸ÀÌ");
+            Cooked = Cookeditem("ì—°ì–´êµ¬ì´");
         }
-        else if (SelectList.Contains("ÂüÄ¡"))
+        else if (SelectList.Contains("ì°¸ì¹˜"))
         {
-            Cooked = Cookeditem("ÂüÄ¡±¸ÀÌ");
-            Debug.Log("ÂüÄ¡±¸ÀÌ°¡ ¸¸µé¾îÁü");
+            Cooked = Cookeditem("ì°¸ì¹˜êµ¬ì´");
         }
-        else if (SelectList.Contains("»ç°ú"))
+        else if (SelectList.Contains("ì‚¬ê³¼"))
         {
-            Cooked = Cookeditem("±¸¿î »ç°ú");
-            Debug.Log("±¸¿î »ç°ú°¡ ¸¸µé¾îÁü");
+            Cooked = Cookeditem("êµ¬ìš´ ì‚¬ê³¼");
         }
-        else if (SelectList.Contains("·¹¸ó"))
+        else if (SelectList.Contains("ë ˆëª¬"))
         {
-            Cooked = Cookeditem("±¸¿î ·¹¸ó");
-            Debug.Log(Cooked.Name);
+            Cooked = Cookeditem("êµ¬ìš´ ë ˆëª¬");
         }
-        else if (SelectList.Contains("µþ±â"))
+        else if (SelectList.Contains("ë”¸ê¸°"))
         {
-            Cooked = Cookeditem("±¸¿î µþ±â");
+            Cooked = Cookeditem("êµ¬ìš´ ë”¸ê¸°");
         }
-        else if (SelectList.Contains("º¹¼þ¾Æ"))
+        else if (SelectList.Contains("ë³µìˆ­ì•„"))
         {
-            Cooked = Cookeditem("±¸¿î º¹¼þ¾Æ");
+            Cooked = Cookeditem("êµ¬ìš´ ë³µìˆ­ì•„");
         }
-        else if (SelectList.Contains("¾ç¼ÛÀÌ ¹ö¼¸") || SelectList.Contains("»õ¼ÛÀÌ ¹ö¼¸") || SelectList.Contains("¸ñÀÌ¹ö¼¸"))
+        else if (SelectList.Contains("ì–‘ì†¡ì´ ë²„ì„¯") || SelectList.Contains("ìƒˆì†¡ì´ ë²„ì„¯") || SelectList.Contains("ëª©ì´ë²„ì„¯"))
         {
-            Cooked = Cookeditem("¹ö¼¸ ±¸ÀÌ");
+            Cooked = Cookeditem("ë²„ì„¯ êµ¬ì´");
         }
         else
         {
             Cooked = null;
             GameManager.instance.FailCookPanel.SetActive(true);
-            Debug.Log("¿ä¸® ½ÇÆÐ");
         }
 
 
-        //¿ä¸® ³¡!
+        //ìš”ë¦¬ ë!
         if (Cooked != null) {
-            //¿Ï¼ºÇÑ ¿ä¸® ¼³¸í ¶ç¿ì±â
+            GameManager.instance.audio.clip = GameManager.instance.clips[1];
+            GameManager.instance.audio.Play();
+            //ì™„ì„±í•œ ìš”ë¦¬ ì„¤ëª… ë„ìš°ê¸°
             GameManager.instance.ItemPanel.SetActive(true);
             GameManager.instance.ItemTitle.text = $"{Cooked.Name}";
             GameManager.instance.ItemDescription.text = $"{Cooked.description}";
             GameManager.instance.ItemImage.GetComponent<Image>().sprite = Cooked.image;
+            
         }
         
         CookingPot.instance.CookingPanel.SetActive(false);
         //CookingPot.instance.isCooking = false;
 
-        //Debug.Log(SelectList.Contains("µþ±â"));
+        //Debug.Log(SelectList.Contains("ë”¸ê¸°"));
         SelectList.Clear();
         for (int i = 0; i < images.Length; i++)
         {

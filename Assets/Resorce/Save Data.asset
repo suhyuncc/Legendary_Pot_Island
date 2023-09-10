@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Save Data
   m_EditorClassIdentifier: 
   PhaseNum: 1
-  Days: 2
+  Days: 1
   HungryCount: 0
-  isSaved: 1
+  isSaved: 0

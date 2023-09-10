@@ -14,6 +14,8 @@ TagManager:
   - Fish
   - Ship
   - Mush
+  - Pot
+  - TreeBound
   layers:
   - Default
   - TransparentFX

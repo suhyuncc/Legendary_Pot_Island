@@ -6,12 +6,12 @@ public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager instance;
 
-    //¹°°í±â
+    //ë¬¼ê³ ê¸°
     public Transform Fishpool;
     public GameObject fishprefab;
     private GameObject[] Fishprefabs;
 
-    //°úÀÏ
+    //ê³¼ì¼
     public Transform Fruitpool;
     public GameObject Appleprefab;
     public GameObject Stroprefab;
@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject Waterprefab;
     private GameObject[] Fruitprefabs;
 
-    //¹ö¼¸
+    //ë²„ì„¯
     public Transform MushRoompool;
     public GameObject M1prefab;
     public GameObject M2prefab;
@@ -57,7 +57,7 @@ public class SpawnManager : MonoBehaviour
         ShipPool.transform.SetParent(this.transform);
         ShipPool.SetActive(false);
 
-        //¹°°í±â ÃÊ±â »ı¼º
+        //ë¬¼ê³ ê¸° ì´ˆê¸° ìƒì„±
         for (int i = 0; i < 50; i++)
         {
             GameObject Object = Instantiate(fishprefab);
@@ -66,7 +66,7 @@ public class SpawnManager : MonoBehaviour
             Fishprefabs[i] = Object;
         }
 
-        //°úÀÏ ÃÊ±â »ı¼º
+        //ê³¼ì¼ ì´ˆê¸° ìƒì„±
         for(int i = 0; i < 20; i++)
         {
             GameObject Object;
@@ -96,7 +96,7 @@ public class SpawnManager : MonoBehaviour
             Fruitprefabs[i] = Object;
         }
 
-        //¹ö¼¸ ÃÊ±â »ı¼º
+        //ë²„ì„¯ ì´ˆê¸° ìƒì„±
         for (int i = 0; i < 40; i++)
         {
             GameObject Object;
@@ -208,8 +208,8 @@ public class SpawnManager : MonoBehaviour
 
     public void FishSpawn(GameObject gameObject)
     {
-        int xPos = Random.Range(-90, 90);
-        int yPos = Random.Range(-55, 55);
+        float xPos = Random.Range(-90, 90);
+        float yPos = Random.Range(-55, 55);
         gameObject.SetActive(true);
         gameObject.transform.position = new Vector3(xPos, yPos, 0);
     }
@@ -223,8 +223,8 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
-            int xPos = Random.Range(65, 99);
-            int yPos = Random.Range(22, 45);
+            float xPos = Random.Range(75, 96);
+            float yPos = Random.Range(26, 43);
             Fruitprefabs[num].SetActive(true);
             Fruitprefabs[num].transform.position = new Vector3(xPos, yPos, 0);
         }
@@ -240,8 +240,8 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
-            int xPos = Random.Range(-80, -50);
-            int yPos = Random.Range(-43, -25);
+            float xPos = Random.Range(-80, -50);
+            float yPos = Random.Range(-43, -25);
             MushRoomprefabs[num].SetActive(true);
             MushRoomprefabs[num].transform.position = new Vector3(xPos, yPos, 0);
         }

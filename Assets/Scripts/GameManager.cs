@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private SaveData save;
 
+    public AudioClip[] clips;
+
     public int day;
     public int phase;
 
@@ -24,6 +26,8 @@ public class GameManager : MonoBehaviour
     
     public TextMeshProUGUI dayText;
     public TextMeshProUGUI phaseText;
+
+    public AudioSource audio;
 
     public GameObject ItemPanel;
     public TextMeshProUGUI ItemTitle;
@@ -60,11 +64,17 @@ public class GameManager : MonoBehaviour
             {
                 Inventroy.SetActive(true);
                 isActive = true;
+                audio.clip = clips[0];
+                audio.pitch = 1.3f;
+                audio.Play();
             }
             else
             {
                 Inventroy.SetActive(false);
                 isActive = false;
+                audio.clip = clips[0];
+                audio.pitch = 1f;
+                audio.Play();
             }
         }
 
@@ -134,8 +144,4 @@ public class GameManager : MonoBehaviour
         FailCookPanel.SetActive(false);
     }
 
-    public void SaveAndExit()
-    {
-        SceneManager.LoadScene("StartScene");
-    }
 }

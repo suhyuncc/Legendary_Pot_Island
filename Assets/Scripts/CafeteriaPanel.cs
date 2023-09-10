@@ -32,14 +32,13 @@ public class CafeteriaPanel : MonoBehaviour
 
         Init(GameManager.instance.phase);
 
-        Item thisItem = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/"
-            + Food.sprite.name + ".asset", typeof(Item));
+        Item thisItem = ItemManager.Instance.ItemList.Find(x => x.name == Food.sprite.name);
 
         item = thisItem;
 
         Alpha = new Color(Food.color.r, Food.color.g, Food.color.b, 0.3f);
 
-        Cafeteria_text.text = "π‰ ¡‡!!";
+        Cafeteria_text.text = "Î∞• Ï§ò!!";
     }
 
     // Update is called once per frame
@@ -57,9 +56,13 @@ public class CafeteriaPanel : MonoBehaviour
 
     public void OnFeed()
     {
-        Cafeteria.instance.Feeding();
-        this.gameObject.SetActive(false);
-        feed = false;
+        if (feed)
+        {
+            Cafeteria.instance.Feeding();
+            this.gameObject.SetActive(false);
+            feed = false;
+        }
+        
     }
 
     public void OnCancel()
