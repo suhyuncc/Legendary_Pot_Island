@@ -111,6 +111,13 @@ public class Boat : MonoBehaviour
             isFishing = true;
             fishing.SetActive(true);
         }
+
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            Boat.instance.boatSpeed = 0;
+            Player.Instance.BrokenPanel.SetActive(true);
+            RayDestroy();
+        } //원래 Player에 있던 코드 옮겨옴
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

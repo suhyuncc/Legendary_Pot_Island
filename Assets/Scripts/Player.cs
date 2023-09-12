@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
 
-    [SerializeField]
-    private GameObject BrokenPanel;
+    //[SerializeField]
+    public GameObject BrokenPanel;
     [SerializeField]
     private AudioClip[] clips;
 
@@ -128,12 +128,12 @@ public class Player : MonoBehaviour
             Destroy(destroyedObject);
         }
 
-        if (collision.gameObject.CompareTag("Ship"))
+        /*if (collision.gameObject.CompareTag("Ship"))
         {
             Boat.instance.boatSpeed = 0;
             BrokenPanel.SetActive(true);
             RayDestroy();
-        }
+        }*/
     }
 
 
