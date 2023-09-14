@@ -6,6 +6,8 @@ using UnityEditor;
 
 public class Cooking : MonoBehaviour
 {
+    public static Cooking instance;
+
     [SerializeField]
     private Image[] images;
     [SerializeField]
@@ -17,12 +19,14 @@ public class Cooking : MonoBehaviour
     private Item Cooked;
 
     public Item SelectedItem;
-    List<string> SelectList = new List<string>();
+    public int selectedCount;
+    public List<string> SelectList = new List<string>();
 
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         isClick = false;
         for(int i  = 0; i < images.Length; i++)
         {
@@ -44,6 +48,7 @@ public class Cooking : MonoBehaviour
                     //images[i].sprite = sprites[ImageNum];
                     images[i].sprite = SelectedItem.image;
                     images[i].gameObject.SetActive(true);
+
                     break;
                 }
             }
@@ -69,8 +74,10 @@ public class Cooking : MonoBehaviour
             images[i].gameObject.SetActive(false);
         }
 
-        
-        
+        CookingPot.instance.isCooking = false;
+        //요리를 취소한 후 인벤토리 재료/요리들을 누르면 설명이 뜨지 않고 개수가 소모되는 버그 수정
+        selectedCount = 0;
+
     }
 
     public void CookingBtn()
@@ -202,21 +209,22 @@ public class Cooking : MonoBehaviour
         }
         
         CookingPot.instance.CookingPanel.SetActive(false);
-        //CookingPot.instance.isCooking = false;
 
-        //Debug.Log(SelectList.Contains("딸기"));
         SelectList.Clear();
         for (int i = 0; i < images.Length; i++)
         {
             images[i].gameObject.SetActive(false);
         }
 
+        CookingPot.instance.isCooking = false;
+        //요리를 취소한 후 인벤토리 재료/요리들을 누르면 설명이 뜨지 않고 개수가 소모되는 버그 수정
+
+        selectedCount = 0;
+
     }
 
     public Item Cookeditem(string itemName)
-    {
-        //Item Cooked = (Item)AssetDatabase.LoadAssetAtPath("Assets/Resorce/" + itemName + ".asset", typeof(Item));
-        
+    { 
         Cooked =ItemManager.Instance.ItemList.Find(x => x.name == itemName);
         Cooked.count++;
         return Cooked;
