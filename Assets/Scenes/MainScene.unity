@@ -17999,6 +17999,8 @@ MonoBehaviour:
   ImageNum: 0
   isClick: 0
   SelectedItem: {fileID: 0}
+  selectedCount: 0
+  SelectList: []
 --- !u!82 &974703938
 AudioSource:
   m_ObjectHideFlags: 0

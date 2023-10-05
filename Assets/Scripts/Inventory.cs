@@ -90,7 +90,7 @@ public class Inventory : MonoBehaviour, IPointerClickHandler
             
         }
 
-        if (item.count != 0&& Cooking.instance.selectedCount < 5&& CookingPot.instance.isCooking==true)
+        if (CookingPot.instance.isCooking == true&&item.count != 0&& Cooking.instance.selectedCount < 5)
         {
             Cooking.instance.selectedCount++;
             //5개 이상 시 아이템 클릭 안되게
